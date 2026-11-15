@@ -1260,8 +1260,8 @@
             <img data-brand-logo src="markaz_assets/logos/logo_1_gold_emerald.svg" onerror="this.onerror=null; this.src='markaz_assets/tejarat_logo.png';" alt="Tejarat Logo" class="w-full h-full object-cover" />
           </div>
           <div>
-            <h3 class="font-black text-sm text-gray-900 leading-tight">Tejarat Reseller Sign In</h3>
-            <p class="text-[10px] text-emerald-700 font-semibold">100% Real Account Verification</p>
+            <h3 class="font-black text-sm text-gray-900 leading-tight">Account Login / Create</h3>
+            <p class="text-[10px] text-emerald-700 font-semibold">Email & Password se account banayein ya login karein</p>
           </div>
         </div>
         <button onclick="closeAuthModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 transition">
@@ -1272,40 +1272,19 @@
       <!-- Trust & Verification Notice -->
       <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200/80 rounded-2xl p-3 text-center space-y-1">
         <div class="flex items-center justify-center space-x-1.5">
-          <span class="text-xs font-black text-[var(--mk-green-700)]">Verified Reseller Access</span>
-          <span class="text-[9px] bg-amber-400 text-gray-950 font-black px-1.5 py-0.5 rounded uppercase shadow-sm">VERIFIED</span>
+          <span class="text-xs font-black text-[var(--mk-green-700)]">Reseller Account</span>
         </div>
         <p class="text-[11px] text-gray-600 leading-relaxed">
-          Gmail aur Password se instant login ya naya account banayein. Kisi email link ya code ka intezar nahi karna parega!
+          Email aur Password se naya account banayein ya login karein. Koi Google sign-in zaroori nahi.
         </p>
       </div>
 
-      <!-- 1-Tap Google Sign-In -->
-      <div>
-        <button type="button" onclick="handleGoogleOAuth()" id="btnGoogleOAuth" class="w-full bg-white hover:bg-gray-50 border-2 border-gray-300 text-gray-800 font-bold py-2.5 px-4 rounded-2xl shadow-sm flex items-center justify-center space-x-3 transition active:scale-[0.98]">
-          <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-          </svg>
-          <span class="text-xs font-bold text-gray-800">Continue with Google (Gmail)</span>
-        </button>
-      </div>
-
-      <!-- Divider -->
-      <div class="relative flex py-0.5 items-center">
-        <div class="flex-grow border-t border-gray-200"></div>
-        <span class="flex-shrink mx-2 text-[10px] text-gray-400 uppercase font-black tracking-wider">ya phir Gmail & Password</span>
-        <div class="flex-grow border-t border-gray-200"></div>
-      </div>
-
-      <!-- DIRECT GMAIL & PASSWORD FORM (NO WAITING FOR EMAILS) -->
+      <!-- Email & Password Login / Create Account -->
       <form onsubmit="handlePasswordFormSubmit(event)" class="space-y-3">
         <div>
-          <label class="block text-[11px] font-bold text-gray-700 mb-1">Apna Google / Gmail Address <span class="text-rose-500">*</span></label>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">Apna Email Address <span class="text-rose-500">*</span></label>
           <div class="relative">
-            <input type="email" id="inpDirectEmail" required placeholder="apna.email@gmail.com" class="w-full border-2 border-gray-200 rounded-xl pl-9 pr-3 py-2 text-xs font-semibold outline-none focus:border-[var(--mk-green-600)] transition" />
+            <input type="email" id="inpDirectEmail" required placeholder="apna.email@example.com" class="w-full border-2 border-gray-200 rounded-xl pl-9 pr-3 py-2 text-xs font-semibold outline-none focus:border-[var(--mk-green-600)] transition" />
             <div class="absolute left-3 top-2.5">
               <i data-lucide="mail" class="w-4 h-4 text-gray-400"></i>
             </div>
@@ -1326,7 +1305,7 @@
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold text-gray-700 mb-1">Aap Ka Naam / Reseller Name (Naye Account Ke Liye)</label>
+          <label class="block text-[11px] font-bold text-gray-700 mb-1">Aap Ka Naam (Naya Account Banate Waqt)</label>
           <div class="relative">
             <input type="text" id="inpDirectName" placeholder="Misaal: Hoor Fahim" class="w-full border-2 border-gray-200 rounded-xl pl-9 pr-3 py-2 text-xs font-semibold outline-none focus:border-[var(--mk-green-600)] transition" />
             <div class="absolute left-3 top-2.5">
@@ -1403,18 +1382,12 @@
             <p id="detUrduTitle" class="text-xs text-emerald-700 mt-1 font-bold leading-snug mk-clamp-2"></p>
           </div>
 
-          <!-- Pricing Strip: Wholesale vs Retail. Profit is NEVER shown here —
-               the reseller decides their own margin in the box below. -->
-          <div class="mk-price-strip mk-price-strip-2">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 flex items-center justify-between gap-2">
             <div>
-              <p class="lbl">Wholesale Price</p>
-              <p id="detWholesale" class="val">Rs. 0</p>
+              <p class="text-[10px] font-bold text-emerald-800 uppercase tracking-wide">Wholesale Price</p>
+              <p id="detWholesale" class="text-sm font-black text-emerald-700">Rs. 0</p>
             </div>
-            <div class="sep">
-              <p class="lbl">Retail Price</p>
-              <p id="detRetailCuts" class="text-[10px] leading-tight text-gray-400 mb-0.5"></p>
-              <p id="detRetail" class="val" style="font-size:.8125rem">Rs. 0</p>
-            </div>
+            <span class="text-[10px] font-semibold text-emerald-700 bg-white/70 border border-emerald-200 px-2 py-1 rounded-lg">Aap apna profit khud add karein</span>
           </div>
 
           <!-- Variants (Size / Pack Selector) -->
@@ -1439,16 +1412,11 @@
               </button>
             </div>
 
-            <!-- Fixed Margin: seller apni price nahi likhta — customer Retail par kharidta hai -->
-            <div id="resellerProfitBox" class="pt-1 space-y-2 hidden">
-              <input type="hidden" id="detCustomProfit" />
-              <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 flex items-center justify-between gap-2">
-                <div class="min-w-0">
-                  <p class="text-xs font-black text-emerald-900">Aap ka profit kiraan</p>
-                  <p class="text-[9px] text-emerald-700 font-semibold leading-snug">Customer hamesha Retail price par order karta hai — aap Apna profit daal sakte hain</p>
-                </div>
-                <span id="detFixedProfit" class="text-sm font-black text-emerald-700 flex-shrink-0">Rs. 0</span>
-              </div>
+            <!-- Reseller apna profit khud set kare -->
+            <div id="resellerProfitBox" class="pt-1 space-y-2">
+              <label class="block text-xs font-black text-gray-900">Aap ka Profit (Rs.)</label>
+              <input id="detCustomProfit" type="number" min="0" step="1" value="0" inputmode="numeric" oninput="updateLiveOrderCalculation()" class="w-full border-2 border-emerald-200 rounded-xl px-3 py-2 text-sm font-black text-gray-900 focus:outline-none focus:border-emerald-500 bg-white" placeholder="Maslan: 300" />
+              <p class="text-[10px] text-gray-600 font-semibold">Customer ko aap jo selling price batayein, us hisaab se yahan apna profit likhein. Total = Wholesale + Aap ka Profit + Delivery.</p>
             </div>
 
             <div class="bg-white rounded-xl p-2.5 border border-gray-200 flex items-center justify-between gap-2 text-xs shadow-sm">
@@ -2885,7 +2853,7 @@
       const password = document.getElementById('inpDirectPassword').value;
 
       if (!email || !email.includes('@')) {
-        showToast('Bara-e-karam apna durust Gmail address darj karein!');
+        showToast('Bara-e-karam apna durust Email address darj karein!');
         return;
       }
       if (!password || password.length < 6) {
@@ -2952,7 +2920,7 @@
       const name = nameInp ? nameInp.value.trim() : '';
 
       if (!email || !email.includes('@')) {
-        showToast('Bara-e-karam apna durust Gmail address darj karein!');
+        showToast('Bara-e-karam apna durust Email address darj karein!');
         return;
       }
       if (!password || password.length < 6) {
@@ -3021,7 +2989,7 @@
         email: email,
         full_name: cleanName,
         store_name: storeName,
-        provider: 'gmail',
+        provider: 'email',
         verified: true,
         verified_at: new Date().toISOString()
       };
@@ -3047,111 +3015,6 @@
       }
 
       showToast(`✓ Welcome ${cleanName}! Account Verified ho gaya!`);
-    }
-
-    
-    // Real Supabase Google OAuth Handler
-    async function handleGoogleOAuth() {
-      try {
-        showToast('Google Sign-In open ho raha hai...');
-        const redirectUrl = window.location.origin + window.location.pathname;
-        const { data, error } = await supabaseClient.auth.signInWithOAuth({
-          provider: 'google',
-          options: {
-            redirectTo: redirectUrl,
-            queryParams: {
-              access_type: 'offline',
-              prompt: 'select_account'
-            }
-          }
-        });
-
-        if (error) {
-          console.warn('Google OAuth error:', error);
-          if (error.message.includes('Provider is not enabled') || error.status === 400) {
-            // Show user-friendly setup guide instead of just opening modal blindly
-            showToast('Google Sign Up/In ke liye Google Cloud Console set up chahiye');
-            showToast('1. Supabase Dashboard > Authentication > Providers > Google ko enable karein');
-            showToast('2. Google Cloud Console se Client ID aur Client Secret le aayein');
-            showToast('3. Inhon details Supabase mein daal dein');
-            openGoogleSetupGuideModal();
-          } else {
-            showToast('Google Sign-In Error: ' + error.message);
-          }
-        }
-      } catch (err) {
-        console.error('Google OAuth exception:', err);
-        openGoogleSetupGuideModal();
-      }
-    }
-
-    // Enhanced Google setup guide modal with better content
-    function openGoogleSetupGuideModal() {
-      const modal = document.getElementById('googleSetupGuideModal');
-      if (modal) {
-        // Update modal content with clearer steps
-        modal.innerHTML = `
-          <div class="bg-gray-800 rounded-2xl p-6 max-w-sm mx-auto text-center">
-            <div class="w-16 h-16 rounded-2xl bg-emerald-600 mx-auto flex items-center justify-center mb-4">
-              <i data-lucide="error" class="w-8 h-8 text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Google Sign Up/In</h3>
-            <p class="text-white/60 mb-6">Google Provider enable karne ke liye ye steps follow karein:</p>
-            <ol class="list-decimal list-inside text-white/80 mb-6 space-y-2">
-              <li>Supabase Dashboard > Authentication > Providers section open karein</li>
-              <li>Google provider par click karein aur Enable karein</li>
-              <li>Google Cloud Console (console.cloud.google.com) open karein</li>
-              <li>New credentials > OAuth client ID banayein (Web Application)</li>
-              <li>Supabase mein Client ID aur Client Secret daal dein</li>
-              <li>Authorized redirect URI: https://tejarat-app.vercel.app</li>
-            </ol>
-            <p class="text-white/60 text-sm">Set up karne ke baad dobara sign try karein.</p>
-            <button onclick="closeGoogleSetupGuideModal()" class="mt-4 w-full bg-emerald-600 text-white py-2 rounded-xl text-sm font-medium">Close</button>
-          </div>
-        `;
-        lucide.createIcons();
-        modal.classList.remove('hidden');
-      }
-    }
-
-    function closeGoogleSetupGuideModal() {
-      const modal = document.getElementById('googleSetupGuideModal');
-      if (modal) {
-        modal.classList.add('hidden');
-      }
-    }
-
-    function copySupabaseCallbackUrl() {
-      const url = "https://xdsxmgzcfihkohsbzszq.supabase.co/auth/v1/callback";
-      navigator.clipboard.writeText(url).then(() => {
-        showToast('✓ Redirect URL Copy ho gaya!');
-      }).catch(() => {
-        showToast('Copy: ' + url);
-      });
-    }
-
-    // 4. Google 1-Tap Login (Zero 404 errors, fast, reliable)
-    async function handleGoogleOneTapLogin() {
-      // Check if user has an email in the input, or prompt for Gmail
-      let email = document.getElementById('inpDirectEmail').value.trim().toLowerCase();
-      let name = document.getElementById('inpDirectName') ? document.getElementById('inpDirectName').value.trim() : '';
-
-      if (!email || !email.includes('@gmail.com')) {
-        const userPrompt = prompt("Apna Google / Gmail Address darj karein:", email || "apna.name@gmail.com");
-        if (!userPrompt) return;
-        email = userPrompt.trim().toLowerCase();
-      }
-
-      if (!email.includes('@')) {
-        showToast('Bara-e-karam apna durust Google / Gmail address darj karein!');
-        return;
-      }
-
-      const cleanName = name || email.split('@')[0].replace(/[0-9._]/g, ' ').trim() || 'Google Partner';
-      const capitalized = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
-      
-      await registerResellerDirectly(email, capitalized);
-      showToast(`✓ Google Account (${email}) se Verified Login ho gaya!`);
     }
 
     // 5. Handle Successful Authentication (Local state + Supabase reseller_wallets Sync)
@@ -3255,7 +3118,7 @@
       if (pName) pName.innerText = 'Mehmon Reseller';
 
       const pEmail = document.getElementById('profileUserEmail');
-      if (pEmail) pEmail.innerText = 'Google (Gmail) se login karein';
+      if (pEmail) pEmail.innerText = 'Email se login karein';
 
       const pBadge = document.getElementById('profileVerifiedBadge');
       if (pBadge) {
@@ -3418,21 +3281,9 @@
     }
 
     // ==================== RENDER PRODUCTS FEED ====================
-    // --- Price helpers: market cuts + real retail per size ---
-    const mkCut = (v, pct) => Math.ceil(((Number(v) || 0) * pct) / 10) * 10;
-    function retailForWholesale(p, ws) {
-      const baseWs = Number(p && p.wholesale_price) || 0;
-      const baseRt = Number(p && p.suggested_retail_price) || 0;
-      if (!baseWs || !baseRt) return Math.round((Number(ws) || 0) * 1.3);
-      return Math.max(10, Math.round((baseRt * ((Number(ws) || 0) / baseWs)) / 10) * 10);
-    }
-    function updateRetailCuts(retail) {
-      const el = document.getElementById('detRetailCuts');
-      if (!el) return;
-      const r = Number(retail) || 0;
-      el.innerHTML = '<span class="line-through">Rs. ' + mkCut(r, 1.28).toLocaleString() +
-        '</span> <span class="line-through">Rs. ' + mkCut(r, 1.14).toLocaleString() + '</span>';
-    }
+    // --- Price helpers (retail option removed) ---
+    function retailForWholesale(p, ws) { return Number(ws) || (p && Number(p.wholesale_price)) || 0; }
+    function updateRetailCuts() { /* retail removed */ }
 
     // Desktop download button
     function downloadApkFromDesk() {
@@ -3494,21 +3345,13 @@
                 <h4 onclick="openProductModal('${prod.id}')" class="font-black text-xs text-gray-900 leading-snug mk-clamp-2 cursor-pointer hover:text-[var(--mk-brand)] mt-0.5">${prod.title}</h4>
               </div>
 
-              <!-- Price: Wholesale upar + market cuts + Retail neeche -->
+              <!-- Price: Wholesale only -->
               <div class="pt-1.5 border-t border-gray-50 space-y-1">
                 <div class="flex items-baseline justify-between gap-1">
                   <span class="text-[10px] text-gray-400 font-semibold">Wholesale</span>
                   <span class="text-[13px] font-black text-[var(--mk-brand)]">Rs. ${Number(prod.wholesale_price || 0).toLocaleString()}</span>
                 </div>
-                <div class="flex items-center justify-end gap-1 flex-wrap">
-                  <span class="text-[9px] font-black text-emerald-700 bg-emerald-50 border border-emerald-100 px-1.5 rounded">${Math.round((1 - (Number(prod.suggested_retail_price || 0) / Math.max(1, mkCut(prod.suggested_retail_price, 1.28)))) * 100)}% OFF</span>
-                  <span class="text-[9px] text-gray-300 font-bold line-through">Rs. ${mkCut(prod.suggested_retail_price, 1.28).toLocaleString()}</span>
-                  <span class="text-[9px] text-gray-400 font-bold line-through">Rs. ${mkCut(prod.suggested_retail_price, 1.14).toLocaleString()}</span>
-                </div>
-                <div class="flex items-baseline justify-between gap-1">
-                  <span class="text-[10px] text-gray-400 font-semibold">Retail</span>
-                  <span class="text-xs font-black text-gray-900">Rs. ${Number(prod.suggested_retail_price || 0).toLocaleString()}</span>
-                </div>
+                <p class="text-[10px] text-emerald-700 font-semibold">Apna profit khud add karein (Resell par)</p>
               </div>
 
               <!-- Action Buttons -->
@@ -3587,10 +3430,7 @@
       } else if (currentProduct) {
         currentSelectedWholesalePrice = currentProduct.wholesale_price;
       }
-      const estRetail = retailForWholesale(currentProduct, currentSelectedWholesalePrice);
       document.getElementById('detWholesale').innerText = `Rs. ${currentSelectedWholesalePrice.toLocaleString()}`;
-      document.getElementById('detRetail').innerText = `Rs. ${estRetail.toLocaleString()}`;
-      updateRetailCuts(estRetail);
       updateLiveOrderCalculation();
     }
 
@@ -3622,12 +3462,11 @@
     function copyProductDetails() {
       if (!currentProduct) return;
       const wsPrice = currentSelectedWholesalePrice || currentProduct.wholesale_price;
-      const rtPrice = Math.round(wsPrice * 1.3);
+      const rtPrice = 0;
       const textToCopy =
 `🌟 *${currentProduct.title}*
 ${currentProduct.urdu_title ? currentProduct.urdu_title + '\n' : ''}
 📦 *Wholesale Rate:* Rs. ${wsPrice.toLocaleString()}
-💰 *Market Retail Rate:* Rs. ${rtPrice.toLocaleString()}
 ✨ *Selected Pack:* ${document.getElementById('detSizeSelect').value}
 
 📝 *Tafseelat (Details):*
@@ -3644,11 +3483,10 @@ ${currentProduct.description || ''}
     function shareActiveProduct() {
       if (!currentProduct) return;
       const wsPrice = currentSelectedWholesalePrice || currentProduct.wholesale_price;
-      const rtPrice = Math.round(wsPrice * 1.3);
+      const rtPrice = 0;
       const text =
 `*${currentProduct.title}*
 📦 Wholesale: Rs. ${wsPrice.toLocaleString()}
-💰 Market Retail: Rs. ${rtPrice.toLocaleString()}
 🛒 Order: ${ORDER_WHATSAPP_NUMBER}`;
 
       const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
@@ -3662,7 +3500,6 @@ ${currentProduct.description || ''}
 `*${p.title}*
 ${p.urdu_title || ''}
 📦 Wholesale: Rs. ${Number(p.wholesale_price || 0).toLocaleString()}
-💰 Retail: Rs. ${Number(p.suggested_retail_price || 0).toLocaleString()}
 
 🛒 Order: ${ORDER_WHATSAPP_NUMBER}`;
       window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
@@ -3697,17 +3534,14 @@ ${p.urdu_title || ''}
         currentSelectedWholesalePrice = p.wholesale_price;
       }
 
-      const estRetail = retailForWholesale(p, currentSelectedWholesalePrice);
       document.getElementById('detWholesale').innerText = `Rs. ${Number(currentSelectedWholesalePrice || 0).toLocaleString()}`;
-      document.getElementById('detRetail').innerText = `Rs. ${estRetail.toLocaleString()}`;
-      updateRetailCuts(estRetail);
 
       // Reset order state
       selectedOrderMode = 'Resell';
       selectedPaymentMethod = 'COD';
       selectedAdvanceChannel = null;
       const profitInput = document.getElementById('detCustomProfit');
-      if (profitInput) profitInput.value = 500;
+      if (profitInput) profitInput.value = 0;
       setOrderMode('Resell');
       setPaymentMethod('COD', 'order');
       updateLiveOrderCalculation();
@@ -3735,12 +3569,13 @@ ${p.urdu_title || ''}
       if (mode === 'Resell') {
         btnResell.classList.add('is-active');
         btnSelf.classList.remove('is-active');
-        box.classList.remove('hidden');
+        if (box) box.classList.remove('hidden');
       } else {
         btnSelf.classList.add('is-active');
         btnResell.classList.remove('is-active');
-        box.classList.add('hidden');
-        document.getElementById('detCustomProfit').value = 0;
+        if (box) box.classList.add('hidden');
+        const pf = document.getElementById('detCustomProfit');
+        if (pf) pf.value = 0;
       }
       updateLiveOrderCalculation();
     }
@@ -3752,16 +3587,14 @@ ${p.urdu_title || ''}
 
     function updateLiveOrderCalculation() {
       if (!currentProduct) return;
-      const wholesale = currentSelectedWholesalePrice || currentProduct.wholesale_price || 0;
-      // Seller ka profit: agar seller ne input diya ho to use lenen, warna retail - wholesale calculate ho jayega
+      const wholesale = Number(currentSelectedWholesalePrice || currentProduct.wholesale_price || 0);
       const profitInput = document.getElementById('detCustomProfit');
       let profit = 0;
-      if (profitInput && selectedOrderMode === 'Resell') {
-        profit = Math.max(0, parseInt(profitInput.value) || 0);
-      } else {
-        profit = Math.max(0, retail - wholesale);
+      if (selectedOrderMode === 'Resell' && profitInput) {
+        profit = Math.max(0, parseInt(profitInput.value, 10) || 0);
       }
-      const total = (selectedOrderMode === 'Resell' ? retail : wholesale) + FLAT_DELIVERY_FEE;
+      const productTotal = wholesale + profit;
+      const total = productTotal + FLAT_DELIVERY_FEE;
 
       const codEl = document.getElementById('detFinalCustomerCOD');
       if (codEl) codEl.innerText = `Rs. ${total.toLocaleString()}`;
@@ -4646,7 +4479,7 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
     const BOT_FAQ = {
       order_process: `🛒 <strong>Order kaise karein?</strong><br><br>1) Home ya Catalogs se product kholein.<br>2) "Resell & Kamayein" ya "Apne Liye Kharidein" chunein.<br>3) Apna munafa (profit) likhein.<br>4) "Aage Barhein" dabayein → customer details bhar dein.<br>5) Payment (COD ya Advance) chunein.<br>6) "Order Confirm" dabayein — order WhatsApp par foran chala jayega aur Admin Panel mein bhi save ho jayega.`,
       delivery_fee: `🚚 <strong>Delivery Charges</strong><br><br>Flat Rs. ${FLAT_DELIVERY_FEE} poore Pakistan mein (TCS / Leopards / Trax courier).<br>Full Advance Payment par Flat Rs. ${ADVANCE_DISCOUNT_AMOUNT} ka discount apne aap lag jata hai.`,
-      reseller_profit: `💰 <strong>Munafa kab milega?</strong><br><br>Aap ki kamai fix hoti hai — customer Retail price par order karta hai aur aap ko Wholesld mein. Customer COD par raqam dega, aap ka profit us mein se aap ka hota hai.<br>Order deliver hone ke baad admin wallet update kar deta hai aur aap EasyPaisa / JazzCash / Bank par withdraw kar sakte hain.`,
+      reseller_profit: `💰 <strong>Munafa kab milega?</strong><br><br>Aap ki kamai fix hoti hai — aap apna profit add karke customer ko selling price batate hain aur aap ko wholesaleld mein. Customer COD par raqam dega, aap ka profit us mein se aap ka hota hai.<br>Order deliver hone ke baad admin wallet update kar deta hai aur aap EasyPaisa / JazzCash / Bank par withdraw kar sakte hain.`,
       advance_discount: `⚡ <strong>Advance Payment Discount</strong><br><br>Full Advance Payment (EasyPaisa / JazzCash / Meezan Bank) par Flat Rs. ${ADVANCE_DISCOUNT_AMOUNT} OFF.<br>Payment step par logo par click karein — account number reveal ho jayega aur aap screenshot WhatsApp par bhej sakte hain.`,
       return_policy: `🛡️ <strong>Return Policy</strong><br><br>7 Din ki Easy Return Policy. Product damage ya fault par 100% Free exchange ya refund.<br>Order deliver hone ke 7 din ke andar customer support par rabta karein.`,
     };
@@ -4874,16 +4707,13 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
                 <h4 onclick="openProductModal('${prod.id}')" class="font-black text-xs text-gray-900 leading-snug mk-clamp-2 cursor-pointer hover:text-emerald-700 mt-0.5">${prod.title}</h4>
               </div>
 
-              <!-- Price Row: Wholesale + Retail (the reseller picks their own profit) -->
+              <!-- Price: Wholesale only -->
               <div class="pt-1 border-t border-gray-100 space-y-0.5">
                 <div class="flex items-baseline justify-between gap-1">
                   <span class="text-[9px] text-gray-400 font-bold">Wholesale</span>
                   <span class="text-xs font-black text-[var(--mk-brand)]">Rs. ${Number(prod.wholesale_price || 0).toLocaleString()}</span>
                 </div>
-                <div class="flex items-baseline justify-between gap-1">
-                  <span class="text-[9px] text-gray-400 font-bold">Retail</span>
-                  <span class="text-[10px] font-bold text-gray-700">Rs. ${Number(prod.suggested_retail_price || 0).toLocaleString()}</span>
-                </div>
+
               </div>
 
               <!-- Action Buttons -->
@@ -4998,57 +4828,6 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
       </div>
     </div>
   </div>
-
-  <!-- ==================== MODAL: GOOGLE OAUTH SUPABASE SETUP GUIDE ==================== -->
-  <div id="googleSetupGuideModal" class="fixed inset-0 bg-black/75 z-50 hidden flex items-center justify-center p-3">
-    <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-4 shadow-2xl border border-gray-100 max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-150">
-      <div class="flex items-center justify-between border-b pb-3">
-        <div class="flex items-center space-x-2">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-          </svg>
-          <h3 class="font-black text-sm text-gray-900">Google OAuth Activate Karein</h3>
-        </div>
-        <button onclick="closeGoogleSetupGuideModal()" class="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500">
-          <i data-lucide="x" class="w-4 h-4"></i>
-        </button>
-      </div>
-
-      <div class="space-y-3 text-xs text-gray-700">
-        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 space-y-1">
-          <p class="font-bold text-amber-900">Google OAuth 50,000 Users/Month Free Hai!</p>
-          <p class="text-[11px] text-amber-800">
-            اس پر کوئی ای میل لمیٹ نہیں ہوتی۔ صرف گوگل کلاؤڈ سے کلائنٹ آئی ڈی لا کر سپابیس میں سیو کرنی ہے۔
-          </p>
-        </div>
-
-        <div class="space-y-2 text-[11px]">
-          <p class="font-bold text-gray-900">طریقہ کار (2 منٹ کا آسان سیٹ اپ):</p>
-          <ol class="list-decimal list-inside space-y-1.5 text-gray-600 font-medium">
-            <li>Google Cloud Console (<a href="https://console.cloud.google.com" target="_blank" class="text-blue-600 underline font-bold">console.cloud.google.com</a>) اوپن کریں۔</li>
-            <li><strong>OAuth Client ID</strong> (Web Application) کریٹ کریں۔</li>
-            <li>Authorized Redirect URI میں یہ پاتھ ڈالیں:</li>
-          </ol>
-          <div class="bg-gray-100 p-2.5 rounded-xl border flex items-center justify-between">
-            <span class="font-mono text-[10px] break-all select-all">https://xdsxmgzcfihkohsbzszq.supabase.co/auth/v1/callback</span>
-            <button onclick="copySupabaseCallbackUrl()" class="ml-2 bg-[var(--mk-green-500)] text-white px-2 py-1 rounded text-[10px] font-bold whitespace-nowrap">Copy</button>
-          </div>
-          <ol start="4" class="list-decimal list-inside space-y-1.5 text-gray-600 font-medium">
-            <li>Supabase Dashboard -> <strong>Authentication</strong> -> <strong>Providers</strong> -> <strong>Google</strong> اوپن کریں۔</li>
-            <li>Google کو <strong>ON</strong> کر کے Client ID اور Client Secret پیسٹ کر کے <strong>Save</strong> کر دیں۔</li>
-          </ol>
-        </div>
-
-        <button onclick="closeGoogleSetupGuideModal()" class="w-full bg-[var(--mk-green-500)] hover:bg-emerald-800 text-white font-black py-2.5 rounded-xl text-xs shadow transition">
-          Samajh Aa Gaya (Theek Hai)
-        </button>
-      </div>
-    </div>
-  </div>
-
 
   <!-- ==================== MODAL: LIVE COLOR THEME PICKER ==================== -->
   <div id="themePickerModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
