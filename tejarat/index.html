@@ -1257,7 +1257,7 @@
       <div class="flex items-center justify-between border-b border-gray-100 pb-3">
         <div class="flex items-center space-x-2.5">
           <div class="w-10 h-10 rounded-2xl overflow-hidden shadow border border-emerald-400/40 bg-white flex items-center justify-center flex-shrink-0">
-            <img data-brand-logo src="markaz_assets/logos/logo_1_gold_emerald.svg" onerror="this.onerror=null; this.src='markaz_assets/tejarat_logo.png';" alt="Tejarat Logo" class="w-full h-full object-cover" />
+            <img data-brand-logo src="markaz_assets/tejarat_logo.png" alt="Tejarat Logo" class="w-full h-full object-contain" />
           </div>
           <div>
             <h3 class="font-black text-sm text-gray-900 leading-tight">Account Login / Create</h3>
@@ -1382,13 +1382,18 @@
             <p id="detUrduTitle" class="text-xs text-emerald-700 mt-1 font-bold leading-snug mk-clamp-2"></p>
           </div>
 
-          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 flex items-center justify-between gap-2">
-            <div>
-              <p class="text-[10px] font-bold text-emerald-800 uppercase tracking-wide">Wholesale Price</p>
-              <p id="detWholesale" class="text-sm font-black text-emerald-700">Rs. 0</p>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 space-y-1">
+            <div class="flex items-baseline justify-between gap-1">
+              <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wide">Wholesale Price</span>
+              <span id="detWholesale" class="text-sm font-black text-emerald-700">Rs. 0</span>
             </div>
-            <span class="text-[10px] font-semibold text-emerald-700 bg-white/70 border border-emerald-200 px-2 py-1 rounded-lg">Aap apna profit khud add karein</span>
+            <div id="detCuts" class="flex items-center justify-end gap-1 flex-wrap"></div>
+            <div class="flex items-baseline justify-between gap-1">
+              <span class="text-[10px] font-bold text-gray-600 uppercase tracking-wide">Retail Price</span>
+              <span id="detRetail" class="text-sm font-black text-gray-900">Rs. 0</span>
+            </div>
           </div>
+
 
           <!-- Variants (Size / Pack Selector) -->
           <div class="mk-field">
@@ -2200,12 +2205,11 @@
     // in the app instantly.
     // ================================================================
     const BRAND_LOGOS = [
-      { key: 'tejarat_badge', file: 'markaz_assets/tejarat_logo.png', label: 'Official Tejarat Badge', desc: 'Gold circle + Green T + Stars' },
-      { key: 'logo_1_gold_emerald', file: 'markaz_assets/logos/logo_1_gold_emerald.svg', label: 'Gold Emerald T', desc: 'Classic gold & emerald monogram' },
+      { key: 'tejarat_t', file: 'markaz_assets/tejarat_logo.png', label: 'Tejarat T', desc: 'Navy & Gold T' },
     ];
 
     function currentBrandLogo() {
-      const key = localStorage.getItem('tejarat_brand_logo') || 'tejarat_badge';
+      const key = localStorage.getItem('tejarat_brand_logo') || 'tejarat_t';
       return BRAND_LOGOS.find(l => l.key === key) || BRAND_LOGOS[0];
     }
 
@@ -3281,9 +3285,47 @@
     }
 
     // ==================== RENDER PRODUCTS FEED ====================
-    // --- Price helpers (retail option removed) ---
-    function retailForWholesale(p, ws) { return Number(ws) || (p && Number(p.wholesale_price)) || 0; }
-    function updateRetailCuts() { /* retail removed */ }
+    // --- Price helpers: wholesale + retail with cut-cut (strikethrough) prices ---
+    const mkCut = (v, pct) => Math.ceil(((Number(v) || 0) * pct) / 10) * 10;
+    function getRetailPrice(p) {
+      return Number(p && p.suggested_retail_price) || Number(p && p.wholesale_price) || 0;
+    }
+    function getPriceCuts(p) {
+      const r = getRetailPrice(p);
+      let arr = (p && p.specs && Array.isArray(p.specs.cuts)) ? p.specs.cuts.map(Number).filter(n => n > 0) : [];
+      if (!arr.length && r > 0) arr = [mkCut(r, 1.28), mkCut(r, 1.14), mkCut(r, 1.07)];
+      return arr.slice(0, 3);
+    }
+    function priceBlockHtml(p) {
+      const r = getRetailPrice(p);
+      const cuts = getPriceCuts(p);
+      if (!r || !cuts.length) return '';
+      const max = Math.max(...cuts, r);
+      const off = Math.max(0, Math.round((1 - r / max) * 100));
+      return `
+        <div class="flex items-center justify-end gap-1 flex-wrap">
+          ${off > 0 ? `<span class="text-[9px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">${off}% OFF</span>` : ''}
+          ${cuts.map(c => `<span class="text-[10px] text-gray-400 font-bold line-through">Rs. ${Number(c).toLocaleString()}</span>`).join('')}
+        </div>
+        <div class="flex items-baseline justify-between gap-1">
+          <span class="text-[10px] text-gray-400 font-semibold">Retail Price</span>
+          <span class="text-[13px] font-black text-gray-900">Rs. ${Number(r).toLocaleString()}</span>
+        </div>`;
+    }
+    function updateRetailCuts(p) {
+      const box = document.getElementById('detCuts');
+      const rtEl = document.getElementById('detRetail');
+      const r = getRetailPrice(p);
+      const cuts = getPriceCuts(p);
+      if (rtEl) rtEl.innerText = `Rs. ${Number(r).toLocaleString()}`;
+      if (box) {
+        if (!r || !cuts.length) { box.innerHTML = ''; return; }
+        const max = Math.max(...cuts, r);
+        const off = Math.max(0, Math.round((1 - r / max) * 100));
+        box.innerHTML = (off > 0 ? '<span class="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">' + off + '% OFF</span>' : '') +
+          cuts.map(c => '<span class="text-[10px] text-gray-400 font-bold line-through">Rs. ' + Number(c).toLocaleString() + '</span>').join('');
+      }
+    }
 
     // Desktop download button
     function downloadApkFromDesk() {
@@ -3321,7 +3363,7 @@
           <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md border border-gray-100 flex flex-col justify-between transition group">
             <!-- Product Image -->
             <div class="relative bg-gray-100 h-44 overflow-hidden cursor-pointer" onclick="openProductModal('${prod.id}')">
-              <img src="${prod.image_url}" alt="${prod.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='markaz_assets/category_fallback_image.webp'" />
+              <img loading="lazy" src="${prod.image_url}" alt="${prod.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300 onerror="this.src='markaz_assets/category_fallback_image.webp'" />
 
               <!-- Category tag (profit is never advertised — the reseller sets their own) -->
               <span class="absolute top-2.5 left-2.5 bg-[var(--mk-brand)] text-white text-[10px] font-black px-2 py-0.5 rounded-lg shadow max-w-[60%] truncate">
@@ -3345,13 +3387,13 @@
                 <h4 onclick="openProductModal('${prod.id}')" class="font-black text-xs text-gray-900 leading-snug mk-clamp-2 cursor-pointer hover:text-[var(--mk-brand)] mt-0.5">${prod.title}</h4>
               </div>
 
-              <!-- Price: Wholesale only -->
+              <!-- Price: Wholesale upar + Retail with cut-cut prices -->
               <div class="pt-1.5 border-t border-gray-50 space-y-1">
                 <div class="flex items-baseline justify-between gap-1">
                   <span class="text-[10px] text-gray-400 font-semibold">Wholesale</span>
                   <span class="text-[13px] font-black text-[var(--mk-brand)]">Rs. ${Number(prod.wholesale_price || 0).toLocaleString()}</span>
                 </div>
-                <p class="text-[10px] text-emerald-700 font-semibold">Apna profit khud add karein (Resell par)</p>
+                ${priceBlockHtml(prod)}
               </div>
 
               <!-- Action Buttons -->
@@ -3431,6 +3473,7 @@
         currentSelectedWholesalePrice = currentProduct.wholesale_price;
       }
       document.getElementById('detWholesale').innerText = `Rs. ${currentSelectedWholesalePrice.toLocaleString()}`;
+      updateRetailCuts(currentProduct);
       updateLiveOrderCalculation();
     }
 
@@ -3513,8 +3556,14 @@ ${p.urdu_title || ''}
       // Multi-angle gallery: 10 photos per product, stored in specs.photos
       const specPhotos = (p.specs && Array.isArray(p.specs.photos)) ? p.specs.photos : [];
       currentProductPhotos = specPhotos.length
-        ? specPhotos.map((ph, i) => ({ url: ph.url, label: ph.label || ('📸 View ' + (i + 1)) }))
-        : [{ url: p.image_url, label: '✨ Studio View' }];
+        ? specPhotos.map((ph, i) => ({
+            url: (ph && typeof ph === 'object') ? (ph.url || ph.src || '') : String(ph || ''),
+            label: (ph && typeof ph === 'object' && ph.label) ? ph.label : ('📸 View ' + (i + 1))
+          })).filter(x => x.url)
+        : [];
+      if (!currentProductPhotos.length && p.image_url) {
+        currentProductPhotos = [{ url: p.image_url, label: '✨ Studio View' }];
+      }
       activePhotoIndex = 0;
       switchProductPhoto(0);
 
@@ -3535,6 +3584,7 @@ ${p.urdu_title || ''}
       }
 
       document.getElementById('detWholesale').innerText = `Rs. ${Number(currentSelectedWholesalePrice || 0).toLocaleString()}`;
+      updateRetailCuts(p);
 
       // Reset order state
       selectedOrderMode = 'Resell';
@@ -3617,7 +3667,8 @@ ${p.urdu_title || ''}
 
         // Populate Step 2 preview
         const firstPhoto = currentProductPhotos[0];
-        document.getElementById('step2ProdImg').src = typeof firstPhoto === 'object' ? firstPhoto.url : firstPhoto;
+        const stepImg = document.getElementById('step2ProdImg');
+        if (stepImg && firstPhoto && firstPhoto.url) stepImg.src = firstPhoto.url;
         document.getElementById('step2ProdTitle').innerText = currentProduct.title;
         document.getElementById('step2ProdVariant').innerText = document.getElementById('detSizeSelect').value;
         const ws = currentSelectedWholesalePrice || currentProduct.wholesale_price;
@@ -4682,7 +4733,7 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
           <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md border border-gray-100 flex flex-col justify-between transition group">
             <!-- Product Square Image -->
             <div class="relative aspect-square w-full bg-gray-100 overflow-hidden cursor-pointer" onclick="openProductModal('${prod.id}')">
-              <img src="${prod.image_url}" alt="${prod.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='markaz_assets/category_fallback_image.webp'" />
+              <img loading="lazy" src="${prod.image_url}" alt="${prod.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300 onerror="this.src='markaz_assets/category_fallback_image.webp'" />
 
               <!-- Category tag (profit is never advertised — the reseller sets their own) -->
               <span class="absolute top-2 left-2 bg-[var(--mk-brand)] text-white text-[9px] font-black px-2 py-0.5 rounded-lg shadow max-w-[55%] truncate">
