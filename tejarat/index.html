@@ -661,9 +661,8 @@
           <div class="min-w-0">
             <div class="flex items-center gap-1.5">
               <h1 class="font-black text-xl tracking-tight leading-none text-white truncate">Tejarat</h1>
-              <span id="headerBrandBadge" class="text-[9px] bg-white/20 text-white font-black px-1.5 py-0.5 rounded uppercase border border-white/25 flex-shrink-0">OFFICIAL</span>
             </div>
-            <p class="text-[10px] text-white/85 font-bold leading-tight mt-0.5 truncate">Be Bold, Be Different, Be Passion</p>
+            <p class="text-[10px] text-white/85 font-bold leading-tight mt-0.5 truncate">Be Bold, Be Different</p>
           </div>
         </div>
 
@@ -1363,7 +1362,7 @@
           <!-- Image Display & Multi-Angle Gallery -->
           <div class="space-y-2">
             <div class="relative rounded-2xl overflow-hidden bg-gray-100 aspect-square max-h-72 shadow-inner border border-gray-100">
-              <img id="detImage" src="" alt="Product" class="w-full h-full object-contain" />
+              <img id="detImage" src="" alt="Product" class="w-full h-full object-contain bg-white" />
               <span class="absolute top-3 left-3 bg-emerald-500 text-white text-[10px] font-black px-2.5 py-1 rounded-xl shadow-md">
                 ⭐ 100% Asli Organic
               </span>
@@ -2025,7 +2024,13 @@
     // Naya email aane par yahan lagayen — jab tak khali hai, email lines show nahi hoti
     const SUPPORT_EMAIL = '';
     const SUPPORT_PHONE = '0313-3411356';
-    const BRAND_TAGLINE = 'Be Bold, Be Different, Be Passion';
+    // Brand support WhatsApp (owner) — number taken from app_settings whatsapp_support_number when available
+    let BRAND_WHATSAPP_NUMBER = '923190328256';
+    function formatPkNumber(digits) {
+      const d = String(digits || '').replace(/\D/g, '');
+      return d.startsWith('92') ? (d.slice(0, 2) + ' ' + d.slice(2, 7) + ' ' + d.slice(7)) : d;
+    }
+    const BRAND_TAGLINE = 'Be Bold, Be Different';
 
     const POLICY_PAGES = {
       about: {
@@ -2035,11 +2040,7 @@
           <p>Tejarat App mein humein yakeen hai ke <b>sehat ka asal raab natural aur saaf khane se shuru hota hai</b>. Apne <b>100% Natural &amp; Pure</b> products ke waade par, hum nature ke behtareen ingredients ko saaf-surat khuj taur par source karte hain taake aap ko aisa quality milay jis par sach mein bharosa ho. Honey aur desi ghee se le kar olive oil, dry fruits, ittar aur doosre natural essentials tak — har product hamari purity, authenticity aur wellness ke waade ka nishan hai. <b>Tejarat App</b> par hum nature ka asal naimat aap ke ghar tak pohanchate hain — bilkul jaise hona chahiye.</p>
 
           <h4>Hamari Kahani — Yahan Se Shuruaat</h4>
-          <p>Tejarat App ka safar paanch saal pehle humare ghar se shuru hua, ek simple mission ke saath: logon ko 100% natural aur khalis shahad dena jis par sach mein bharosa ho s sake. Us waqt sirf shahad hi humara product tha aur mahana sales sirf 10–15 kg hote the. Na website thi, na social media, na koi brand identity — sirf mehnat, imaandari aur quality ka waada.</p>
-
-          <h4>Brand Banana</h4>
-          <p>2025 mein humne faisla kiya ke choti dukaan ko aik bharosemand brand banaya jaye. Humne apna brand naam qanooni tor par register karaya aur professional identity banane par lagan shuru ki. Premium glass jars, custom packaging, professional labels aur khoobsurat branding par kharch kiye, taake har product hamare naam ke peechay ke quality aur trust ko dikhaye.</p>
-          <p>June 2025 tak humne apni pehli shop kiraye aur use brand ke mutabiq customize kiya. Pakistan ke mumtaz courier companies ke saath partnership ki taake poore mulk mein safe aur reliable delivery ho. June ke aakhir tak website aur social media complete ho gaye, aur July 2025 mein Tejarat App officially launch hua. Shuruat mushkil thi aur orders kam thay, magar hum quality par qaim rahe aur customers ki iqdamdar koshish karte rahe.</p>
+          <p>Tejarat App ka safar ek simple mission ke saath shuru hua: logon ko 100% natural aur khalis shahad dena jis par sach mein bharosa ho s sake. Mehnat, imaandari aur quality ka waada hi hamari pehchaan hai.</p>
 
           <h4>Quality Ka Waada</h4>
           <p>Har product saaf aur hygienic conditions mein pakta hota hai. Har jar ko hum professionally label karte hain aur har order ko protective packaging mein mehfooz taur par rakh kar bhejte hain, taake woh Poore Pakistan mein bilkul khalis pohnchay. <b>Har product apne hi sealed box (crate) ke andar</b> bheja jata hai — koi mix nahi, koi jaari nahi.</p>
@@ -2062,16 +2063,6 @@
             <li>Premium Dates</li>
             <li>Ittars &amp; Perfumes</li>
           </ul>
-
-          <h4>Ab Tak Ka Safar</h4>
-          <p>Allah ke karam se, <b>August 2025 se March 2026</b> tak humne yeh deliver kiya:</p>
-          <ul>
-            <li>400+ kg shahad</li>
-            <li>350+ kg desi ghee</li>
-            <li>Ramadan ke duran 250+ boxes khajoor</li>
-            <li>100+ bottles ittar</li>
-          </ul>
-          <p>Yeh milestones hamare customers ke bharose ka saboot hain aur humein roz behtar banne ka hausla dete hain.</p>
 
           <h4>Aage Ka Nazra</h4>
           <p>2026 ka hamra nazarra pehle se bada hai. Hum apni product range barhana chahte hain, Pakistan mein zyada khandaanon tak pohanchna chahte hain, aur quality se koi sulaav nahi karte <b>100% Natural &amp; Pure</b> products dete rahe hain. Har order, har customer aur har recommendation humein aur mazboot karne ka hosla deta hai.</p>
@@ -2148,10 +2139,9 @@
           <p>Har order ko hum dhyan se pack karte hain taake aap ka product aap tak bilkul khalis pohnche. <b>Har product apne hi sealed box (crate) ke andar</b> bheja jata hai — koi mixing nahi, koi weight kam nahi.</p>
 
           <h4>💬 Customer Support</h4>
-          <p>Order mein koi masla ho to humari team har waqt haazir hai. WhatsApp ya email par rabta karein:</p>
+          <p>Order mein koi masla ho to humari team har waqt haazir hai. WhatsApp par rabta karein:</p>
           <ul>
-            <li>📱 WhatsApp / Phone: <a href="https://wa.me/92${SUPPORT_PHONE.slice(1)}" target="_blank">+${SUPPORT_PHONE}</a></li>
-            ${SUPPORT_EMAIL ? '<li>📧 <a href="mailto:' + SUPPORT_EMAIL + '">' + SUPPORT_EMAIL + '</a></li>' : ''}
+            <li>📱 WhatsApp / Phone: <a href="https://wa.me/${BRAND_WHATSAPP_NUMBER}" target="_blank">+92 ${formatPkNumber(BRAND_WHATSAPP_NUMBER)}</a></li>
           </ul>
 
           <p class="pk-center"><b>Tejarat App</b> par bharosa karne ka shukriya!<br>Hum aap ke trust ki qeemat rakhte hain 🌿</p>
@@ -2166,14 +2156,11 @@
 
           <h4>📋 Contact Information</h4>
           <ul>
-            <li>👤 Owner: Hafiz Dr Muhammad Shoaib Al-Madani</li>
-            <li>📱 Phone &amp; WhatsApp: <a href="https://wa.me/92${SUPPORT_PHONE.slice(1)}" target="_blank">${SUPPORT_PHONE}</a></li>
+            <li>👤 Owner: Hafiz Saad Al-Madani</li>
+            <li>📱 Phone / WhatsApp: <a href="https://wa.me/${BRAND_WHATSAPP_NUMBER}" target="_blank">+92 ${formatPkNumber(BRAND_WHATSAPP_NUMBER)}</a></li>
             ${SUPPORT_EMAIL ? '<li>📧 Email: <a href="mailto:' + SUPPORT_EMAIL + '">' + SUPPORT_EMAIL + '</a></li>' : ''}
             <li>🏢 Brand: <b>Tejarat App</b></li>
           </ul>
-
-          <h4>🏪 Shop Address</h4>
-          <p>Shop No#1, Zamanabad Street No#1,<br>Near Khursheed School, Landhi #4, Karachi</p>
 
           <h4>🕐 Support Hours</h4>
           <p><b>24/7 Customer Support</b> — WhatsApp aur email par raat ko bhi jawab mil jata hai.</p>
@@ -2456,7 +2443,10 @@
         APP_SETTINGS = data;
 
         if (data.whatsapp_order_number) ORDER_WHATSAPP_NUMBER = String(data.whatsapp_order_number).replace(/\D/g, '');
-        if (data.whatsapp_support_number) SUPPORT_WHATSAPP_NUMBER = String(data.whatsapp_support_number).replace(/\D/g, '');
+        if (data.whatsapp_support_number) {
+          SUPPORT_WHATSAPP_NUMBER = String(data.whatsapp_support_number).replace(/\D/g, '');
+          BRAND_WHATSAPP_NUMBER = SUPPORT_WHATSAPP_NUMBER;
+        }
         if (data.default_delivery_fee != null) FLAT_DELIVERY_FEE = Number(data.default_delivery_fee) || DEFAULT_DELIVERY_FEE;
         // NOTE: the advance discount is a fixed business rule (Rs. 100) and is
         // deliberately NOT tied to first_order_bonus, which is a reward value.
@@ -2583,7 +2573,6 @@
           const acc = JSON.parse(savedAcc);
           if (acc.account_title) document.getElementById('inpPayoutAccountTitle').value = acc.account_title;
           if (acc.account_number) document.getElementById('inpPayoutAccountNumber').value = acc.account_number;
-          if (acc.cnic) document.getElementById('inpPayoutCnic').value = acc.cnic;
           if (acc.method) selectPayoutBank(acc.method, acc.method);
         } catch(e) {}
       }
@@ -2612,7 +2601,6 @@
       if (e) e.preventDefault();
       const title = document.getElementById('inpPayoutAccountTitle').value.trim();
       const number = document.getElementById('inpPayoutAccountNumber').value.trim();
-      const cnic = document.getElementById('inpPayoutCnic').value.trim();
 
       if (!title || !number) {
         showToast('Bara-e-karam Account Title aur Number dono darj karein!');
@@ -2623,7 +2611,6 @@
         method: selectedPayoutMethod,
         account_title: title,
         account_number: number,
-        cnic: cnic,
         updated_at: new Date().toISOString()
       };
 
@@ -3067,13 +3054,6 @@
 
     // 6. Apply Logged In UI
     function applyLoggedInUserUI(u) {
-      // Top Bar Header Badge -> Show VERIFIED in Gold
-      const headerBadge = document.getElementById('headerBrandBadge');
-      if (headerBadge) {
-        headerBadge.innerText = '✓ VERIFIED';
-        headerBadge.className = 'text-[9px] bg-amber-400 text-gray-950 font-black px-1.5 py-0.5 rounded uppercase shadow-sm flex items-center space-x-0.5';
-      }
-
       // Profile Tab Card
       const pName = document.getElementById('profileUserFullName');
       if (pName) pName.innerText = u.full_name || 'Verified Reseller';
@@ -3110,13 +3090,6 @@
 
     // 7. Enforce Guest Mode (When Logged Out)
     function enforceGuestUI() {
-      // Top Bar Header Badge -> OFFICIAL (NOT Verified!)
-      const headerBadge = document.getElementById('headerBrandBadge');
-      if (headerBadge) {
-        headerBadge.innerText = 'OFFICIAL';
-        headerBadge.className = 'text-[9px] bg-emerald-800/80 text-emerald-200 font-bold px-1.5 py-0.5 rounded uppercase border border-emerald-500/30';
-      }
-
       // Profile Tab Card -> Guest (Unverified)
       const pName = document.getElementById('profileUserFullName');
       if (pName) pName.innerText = 'Mehmon Reseller';
@@ -3965,8 +3938,18 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
       });
     }
 
+    // Order place karne se pehle login zaroori — guest fake orders block
+    function requireLoginForOrder() {
+      const u = currentUser || (() => { try { return JSON.parse(localStorage.getItem('tejarat_user') || 'null'); } catch (e) { return null; } })();
+      if (u && u.email) return true;
+      showToast('Order place karne ke liye pehle Login / Account bana lein.');
+      setTimeout(() => openAuthModal(), 350);
+      return false;
+    }
+
     async function confirmAndPlaceOrder() {
       if (!currentProduct) return;
+      if (!requireLoginForOrder()) return;
 
       const customerName = document.getElementById('ordCustomerName').value.trim();
       const customerPhone = document.getElementById('ordCustomerPhone').value.trim();
@@ -4179,14 +4162,6 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
     function filterOrders(filterName) {
       activeOrderFilter = filterName;
 
-      const styles = {
-        'All': 'bg-emerald-500 text-white',
-        'Pending': 'bg-white text-gray-600 border',
-        'Dispatched': 'bg-white text-gray-600 border',
-        'Delivered': 'bg-white text-gray-600 border',
-        'Returned': 'bg-white text-gray-600 border',
-        'Cancelled': 'bg-white text-gray-600 border',
-      };
       document.querySelectorAll('.order-filter-btn').forEach(btn => {
         const label = btn.textContent.trim();
         let key = 'All';
@@ -4195,7 +4170,9 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
         else if (label.includes('Delivered')) key = 'Delivered';
         else if (label.includes('Returned')) key = 'Returned';
         else if (label.includes('Cancelled')) key = 'Cancelled';
-        btn.className = 'order-filter-btn text-xs font-bold px-3 py-1.5 rounded-full shadow-sm whitespace-nowrap transition ' + (styles[key] || styles['All']);
+        const active = (key === filterName);
+        btn.className = 'order-filter-btn text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition ' +
+          (active ? 'bg-emerald-500 text-white shadow-md ring-2 ring-emerald-300' : 'bg-white text-gray-600 border hover:bg-emerald-50');
       });
 
       renderOrdersList();
@@ -4364,6 +4341,7 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
 
     async function submitCustomerOrder(e) {
       if (e) e.preventDefault();
+      if (!requireLoginForOrder()) return;
       if (!cart.length) {
         showToast('Cart khali hai — pehle product add karein.');
         return;
@@ -4992,11 +4970,6 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
         <div>
           <label class="block text-[11px] font-bold text-gray-700 mb-1">Account Number / Mobile Number / IBAN <span class="text-rose-500">*</span></label>
           <input type="text" id="inpPayoutAccountNumber" required placeholder="Jaise: 03222089610 ya PK12MEZN..." class="w-full border-2 border-gray-200 rounded-xl px-3 py-2 text-xs font-mono font-bold outline-none focus:border-amber-500 transition" />
-        </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-gray-700 mb-1">CNIC Number / Tareekh-e-Pedaish (Optional)</label>
-          <input type="text" id="inpPayoutCnic" placeholder="42101-xxxxxxx-x" class="w-full border-2 border-gray-200 rounded-xl px-3 py-2 text-xs font-mono outline-none focus:border-amber-500 transition" />
         </div>
 
         <button type="submit" id="btnSavePayoutAccount" class="w-full bg-amber-400 hover:bg-amber-500 text-gray-950 font-black py-3 px-4 rounded-xl shadow-md flex items-center justify-center space-x-2 transition active:scale-95">
