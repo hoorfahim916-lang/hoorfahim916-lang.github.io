@@ -1248,15 +1248,9 @@
 
         <!-- CREATE ACCOUNT PANE -->
         <div id="authPaneSignup" class="space-y-3 hidden">
-          <div class="grid grid-cols-2 gap-2">
-            <div>
-              <label class="block text-[11px] font-bold text-gray-700 mb-1">Username <span class="text-rose-500">*</span></label>
-              <input type="text" id="inpSignupUsername" autocomplete="username" placeholder="saad123" class="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-xs font-semibold outline-none focus:border-[var(--mk-green-600)] transition" />
-            </div>
-            <div>
-              <label class="block text-[11px] font-bold text-gray-700 mb-1">Aap Ka Naam <span class="text-rose-500">*</span></label>
-              <input type="text" id="inpSignupName" autocomplete="name" placeholder="Hafiz Saad" class="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-xs font-semibold outline-none focus:border-[var(--mk-green-600)] transition" />
-            </div>
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 mb-1">Aap Ka Naam <span class="text-rose-500">*</span></label>
+            <input type="text" id="inpSignupName" autocomplete="name" placeholder="Hafiz Saad" class="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-xs font-semibold outline-none focus:border-[var(--mk-green-600)] transition" />
           </div>
 
           <div>
@@ -1275,14 +1269,6 @@
               <button type="button" onclick="togglePasswordVisibility('inpSignupPassword', this)" class="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600">
                 <i data-lucide="eye" class="w-4 h-4"></i>
               </button>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-[11px] font-bold text-gray-700 mb-1">Aap Ki Shop Ka Naam <span class="text-rose-500">*</span></label>
-            <div class="relative">
-              <input type="text" id="inpSignupShop" placeholder="Misaal: Saad Natural Store" class="w-full border-2 border-gray-200 rounded-xl pl-9 pr-3 py-2.5 text-xs font-semibold outline-none focus:border-[var(--mk-green-600)] transition" />
-              <div class="absolute left-3 top-3"><i data-lucide="store" class="w-4 h-4 text-gray-400"></i></div>
             </div>
           </div>
 
@@ -2146,6 +2132,7 @@
           <h4>📋 Contact Information</h4>
           <ul>
             <li>👤 Owner: <b>Hafiz Saad Al-Madani</b></li>
+            <li>📱 Contact: <a href="https://wa.me/923133488621" target="_blank">+92 313 3488621</a></li>
             <li>📱 Phone / WhatsApp: <a href="https://wa.me/${BRAND_WHATSAPP_NUMBER}" target="_blank">+92 319 0328256</a></li>
             ${SUPPORT_EMAIL ? '<li>📧 Email: <a href="mailto:' + SUPPORT_EMAIL + '">' + SUPPORT_EMAIL + '</a></li>' : ''}
           </ul>
@@ -2966,18 +2953,14 @@
       }
     }
 
-    // 2. Create real account (username + name + email + password + shop)
+    // 2. Create real account (name + email + password) — shop/username auto-derived
     async function executeDirectSignUp() {
-      const username = (document.getElementById('inpSignupUsername')?.value || '').trim();
       const name = (document.getElementById('inpSignupName')?.value || '').trim();
       const email = (document.getElementById('inpSignupEmail')?.value || '').trim().toLowerCase();
       const password = document.getElementById('inpSignupPassword')?.value || '';
-      const shop = (document.getElementById('inpSignupShop')?.value || '').trim();
+      const username = email.split('@')[0].replace(/[^a-zA-Z0-9._]/g, '').slice(0, 20) || ('user' + Date.now());
+      const shop = name + ' Store';
 
-      if (!username || !/^[a-zA-Z0-9._]{3,20}$/.test(username)) {
-        showToast('Username 3-20 characters ka hona chahiye (letters, numbers, . ya _).');
-        return;
-      }
       if (!name || name.length < 3) {
         showToast('Bara-e-karam apna poora naam darj karein.');
         return;
@@ -2988,10 +2971,6 @@
       }
       if (!password || password.length < 6) {
         showToast('Password kam az kam 6 characters ka hona chahiye.');
-        return;
-      }
-      if (!shop || shop.length < 2) {
-        showToast('Apni shop ka naam darj karein.');
         return;
       }
 
@@ -3435,8 +3414,10 @@
     function getPriceCuts(p) {
       const r = getRetailPrice(p);
       let arr = (p && p.specs && Array.isArray(p.specs.cuts)) ? p.specs.cuts.map(Number).filter(n => n > 0) : [];
-      if (!arr.length && r > 0) arr = [mkCut(r, 1.28), mkCut(r, 1.14), mkCut(r, 1.07)];
-      return arr.slice(0, 3);
+      if (!arr.length && r > 0) arr = [mkCut(r, 1.28)];
+      // Sirf EK retail price (sabse high) dikhao — multiple crossed prices nahi
+      if (arr.length) arr = [Math.max(...arr)];
+      return arr.slice(0, 1);
     }
     function priceBlockHtml(p) {
       const r = getRetailPrice(p);
@@ -4855,18 +4836,26 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
         c.innerHTML = `<div class="text-center py-6 text-gray-400 text-[11px] font-semibold">Abhi koi nayi notification nahi hai.<br>Neeche hamare offers dekhein.</div>`;
         return;
       }
+      const notifColorMap = {
+        emerald: { bg: 'bg-emerald-50', border: 'border-emerald-200', title: 'text-emerald-900', msg: 'text-emerald-800' },
+        amber:   { bg: 'bg-amber-50',   border: 'border-amber-200',   title: 'text-amber-900',   msg: 'text-amber-800' },
+        rose:    { bg: 'bg-rose-50',    border: 'border-rose-200',    title: 'text-rose-900',    msg: 'text-rose-800' },
+        blue:    { bg: 'bg-blue-50',    border: 'border-blue-200',    title: 'text-blue-900',    msg: 'text-blue-800' },
+        purple:  { bg: 'bg-purple-50',  border: 'border-purple-200',  title: 'text-purple-900',  msg: 'text-purple-800' },
+      };
       c.innerHTML = appNotifications.map(n => {
         const when = n.scheduled_at || n.created_at;
         const dateTxt = when ? new Date(when).toLocaleString() : '';
+        const col = notifColorMap[n.color] || notifColorMap.emerald;
         return `
-          <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="${col.bg} border ${col.border} rounded-2xl overflow-hidden shadow-sm">
             ${n.image_url ? `<img src="${escHtml(n.image_url)}" alt="" class="w-full h-32 object-cover bg-gray-100" loading="lazy" onerror="this.style.display='none'" />` : ''}
             <div class="p-3 space-y-1">
               <div class="flex items-start justify-between gap-2">
-                <p class="font-black text-xs text-gray-900 leading-snug">${escHtml(n.title)}</p>
+                <p class="font-black text-xs ${col.title} leading-snug">${escHtml(n.title)}</p>
                 <span class="text-[9px] text-gray-400 flex-shrink-0">${dateTxt}</span>
               </div>
-              <p class="text-[11px] text-gray-600 leading-relaxed whitespace-pre-line">${escHtml(n.message)}</p>
+              <p class="text-[11px] ${col.msg} leading-relaxed whitespace-pre-line">${escHtml(n.message)}</p>
             </div>
           </div>`;
       }).join('');
