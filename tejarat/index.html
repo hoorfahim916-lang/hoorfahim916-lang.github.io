@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#047857" />
+  <meta name="theme-color" content="#0B1D3A" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Tejarat App - Pakistan ki #1 Reselling & Shopping App</title>
-  <link rel="icon" type="image/png" href="markaz_assets/tejarat_logo.png" />
-  <link rel="apple-touch-icon" href="markaz_assets/tejarat_logo.png" />
+  <link rel="icon" type="image/png" href="markaz_assets/tejarat_logo_icon.png" />
+  <link rel="apple-touch-icon" href="markaz_assets/tejarat_logo_icon.png" />
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -129,22 +129,22 @@
       --safe-bottom: env(safe-area-inset-bottom, 0px);
 
       /* Brand green ramp (Markaz primary #02BC87) */
-      --mk-green-50:  #EAFBF4;
-      --mk-green-100: #CFF6E6;
-      --mk-green-200: #9EECD0;
-      --mk-green-300: #5DDDB2;
-      --mk-green-400: #22CB93;
-      --mk-green-500: #02BC87;
-      --mk-green-600: #00A473;
-      --mk-green-700: #009578;
-      --mk-green-800: #02704D;
-      --mk-green-900: #065F46;
-      --mk-green-950: #04392B;
+      --mk-green-50:  #FBF6E3;
+      --mk-green-100: #F6EBC0;
+      --mk-green-200: #EED88F;
+      --mk-green-300: #E2BE55;
+      --mk-green-400: #D2A92C;
+      --mk-green-500: #BE961F;
+      --mk-green-600: #9C7A18;
+      --mk-green-700: #7D6113;
+      --mk-green-800: #5F4A0E;
+      --mk-green-900: #453608;
+      --mk-green-950: #2B2104;
 
-      /* Brand ink ramp (Markaz navy #070A56) */
-      --mk-ink:       #070A56;
-      --mk-ink-deep:  #0E1036;
-      --mk-ink-soft:  #1A1F72;
+      /* Brand ink ramp (Markaz navy #0B1D3A) */
+      --mk-ink:       #0B1D3A;
+      --mk-ink-deep:  #060D1F;
+      --mk-ink-soft:  #1B3260;
 
       /* Neutral ramp (Markaz greys) */
       --mk-neutral-50:  #FAFAFB;
@@ -155,9 +155,9 @@
       --mk-neutral-500: #7A8194;
       --mk-neutral-600: #5C6379;
       --mk-neutral-700: #3F4560;
-      --mk-neutral-800: #1A1F72;
-      --mk-neutral-900: #070A56;
-      --mk-neutral-950: #0E1036;
+      --mk-neutral-800: #1B3260;
+      --mk-neutral-900: #0B1D3A;
+      --mk-neutral-950: #060D1F;
 
       /* Warning / bonus ramp (Markaz #FFBE21) */
       --mk-warn-50:  #FFF9EC;
@@ -207,9 +207,9 @@
       --mk-muted-2:   #98A2B3;
 
       /* Semantic */
-      --mk-success:      #02BC87;
+      --mk-success:      #BE961F;
       --mk-success-soft: #E3F4E7;
-      --mk-success-deep: #009578;
+      --mk-success-deep: #7D6113;
       --mk-warning:      #FFBE21;
       --mk-warning-soft: #FECC82;
       --mk-danger:       #EA5B5B;
@@ -617,20 +617,34 @@
       overflow: hidden;
     }
   </style>
-  <link rel="icon" type="image/png" href="markaz_assets/tejarat_logo.png" />
-  <link rel="apple-touch-icon" href="markaz_assets/tejarat_logo.png" />
+  <link rel="icon" type="image/png" href="markaz_assets/tejarat_logo_icon.png" />
+  <link rel="apple-touch-icon" href="markaz_assets/tejarat_logo_icon.png" />
   <link rel="manifest" href="markaz_assets/manifest.json" />
   <meta name="theme-color" content="#02704D" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <style id="tejarat-design-v4">
+    /* ===== TEJARAT DESIGN — Teal Turquoise (user ki final pasand, Option 14) ===== */
+    body { background: #EFFAF7 !important; }
+    header { box-shadow: 0 10px 30px rgba(4,33,29,.35) !important; border-bottom: 2px solid #2DD4BF !important; }
+    .bottom-safe-nav { border-top: 2px solid #99F6E4 !important; box-shadow: 0 -8px 24px rgba(4,33,29,.14) !important; }
+    div[class*="rounded-3xl"][class*="shadow-sm"] { border: 1.5px solid #A7E8DC !important; box-shadow: 0 10px 26px rgba(4,33,29,.12) !important; }
+    div[class*="rounded-3xl"][class*="shadow-sm"]:hover { box-shadow: 0 16px 34px rgba(4,33,29,.18) !important; transform: translateY(-2px); }
+    button { transition: all .18s ease !important; }
+    button:active { transform: scale(.965); }
+    input:focus, select:focus, textarea:focus { outline: 2px solid #0D9488 !important; outline-offset: 1px; border-color: #0D9488 !important; }
+    .mk-choice.is-active { border: 2px solid #14B8A6 !important; background: #F0FDF9 !important; box-shadow: 0 6px 16px rgba(20,184,166,.28) !important; }
+    ::selection { background: #99F6E4; color: #04211D; }
+  </style>
 </head>
 <body class="bg-[var(--mk-bg-100)] text-gray-900">
 
   <!-- Web install/download strip (simple, like Markaz) -->
   <div id="webInstallBar" class="w-full bg-[var(--mk-ink)] text-white px-3 py-2 flex items-center justify-between gap-2 z-40 sticky top-0">
     <div class="flex items-center gap-2 min-w-0">
-      <img src="markaz_assets/tejarat_logo.png" alt="Tejarat" class="w-8 h-8 rounded-lg object-contain bg-white/10 p-0.5 flex-shrink-0" />
+      <img src="markaz_assets/tejarat_logo_icon.png" alt="Tejarat" class="w-8 h-8 rounded-lg object-contain bg-white/10 p-0.5 flex-shrink-0" />
       <div class="min-w-0 leading-tight">
         <p class="text-[12px] font-black truncate">Tejarat App</p>
         <p class="text-[10px] text-white/80 truncate">Android app install karein</p>
@@ -655,8 +669,8 @@
       <div class="px-4 py-2 flex items-center justify-between gap-2">
         <!-- Left: Logo + "Tejarat" -->
         <div class="flex items-center gap-2.5 cursor-pointer min-w-0" onclick="switchTab('home')">
-          <div class="w-10 h-10 rounded-2xl overflow-hidden shadow-md border-2 border-[#02BC87] flex items-center justify-center bg-[#071F18] flex-shrink-0">
-            <img data-brand-logo src="markaz_assets/tejarat_logo.png" alt="Tejarat Logo" class="w-full h-full object-contain" />
+          <div class="w-10 h-10 rounded-2xl overflow-hidden shadow-md border-2 border-[#2DD4BF] flex items-center justify-center bg-white/10 flex-shrink-0">
+            <img data-brand-logo src="markaz_assets/tejarat_logo_icon.png" alt="Tejarat Logo" class="w-full h-full object-contain" />
           </div>
           <div class="min-w-0">
             <div class="flex items-center gap-1.5">
@@ -685,10 +699,6 @@
             <span id="cartBadge" class="hidden absolute -top-1 -right-1 bg-amber-400 text-gray-950 text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow">0</span>
           </button>
 
-          <!-- Theme Picker Button -->
-          <button onclick="openThemePickerModal()" title="App Theme" class="p-2 bg-white/10 hover:bg-white/20 rounded-full transition text-xs">
-            🎨
-          </button>
         </div>
       </div>
 
@@ -943,24 +953,6 @@
           </div>
         </div>
 
-        <!-- BRAND KIT: logos + theme preview -->
-        <div class="bg-white rounded-3xl p-4 shadow-sm border border-gray-100 space-y-3">
-          <div class="flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2 min-w-0">
-              <span class="p-2 bg-emerald-50 rounded-xl text-emerald-800 flex-shrink-0"><i data-lucide="palette" class="w-4 h-4"></i></span>
-              <div class="min-w-0">
-                <h3 class="font-black text-xs text-gray-900 truncate">Brand Kit</h3>
-                <p class="text-[10px] text-gray-500 truncate">Apna logo aur color theme chunein</p>
-              </div>
-            </div>
-            <button onclick="openThemePickerModal()" class="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full flex-shrink-0">Theme →</button>
-          </div>
-          <div id="brandKitBox" class="grid grid-cols-3 gap-2"></div>
-          <p class="text-[10px] text-gray-400 leading-relaxed">
-            Logo foran app ke header mein lag jata hai. Theme change karne ke liye "Theme" dabayein.
-          </p>
-        </div>
-
         <!-- TWO PROMINENT FEATURE CARDS: MERI PAYMENTS & MERI OFFERS -->
         <div class="grid grid-cols-2 gap-3">
           <!-- Card 1: Meri Payments -->
@@ -992,7 +984,7 @@
         <!-- Withdraw Munafa Action Button -->
         <button onclick="openProfitAccountModal()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-gray-950 font-black py-3 rounded-2xl shadow-lg flex items-center justify-center space-x-2 text-xs transition active:scale-98">
           <i data-lucide="credit-card" class="w-4 h-4"></i>
-          <span>Add Account for Profit Withdraw (EasyPaisa/JazzCash)</span>
+          <span>Add Account for Profit Withdraw (Bank / Wallet)</span>
         </button>
 
         <!-- Markaz-Style Account List (Clean Dividers) -->
@@ -1193,13 +1185,13 @@
     <div class="bg-white rounded-3xl max-w-sm w-full shadow-2xl border border-gray-100 max-h-[94vh] overflow-y-auto">
 
       <!-- Header -->
-      <div class="bg-gradient-to-br from-[#070A56] via-[#0B3B34] to-[#071F18] px-5 pt-5 pb-4 rounded-t-3xl relative text-white">
+      <div class="bg-gradient-to-br from-[#0B1D3A] via-[#0B3B34] to-[#071F18] px-5 pt-5 pb-4 rounded-t-3xl relative text-white">
         <button onclick="closeAuthModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white transition">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
         <div class="flex items-center gap-2.5 mb-2.5">
           <div class="w-11 h-11 rounded-2xl overflow-hidden bg-white/95 border border-white/30 flex items-center justify-center flex-shrink-0">
-            <img data-brand-logo src="markaz_assets/tejarat_logo.png" alt="Tejarat Logo" class="w-full h-full object-contain" />
+            <img data-brand-logo src="markaz_assets/tejarat_logo_icon.png" alt="Tejarat Logo" class="w-full h-full object-contain" />
           </div>
           <div class="min-w-0">
             <p class="text-[10px] font-bold uppercase tracking-widest text-amber-300">Tejarat Account</p>
@@ -1215,6 +1207,17 @@
         <div class="grid grid-cols-2 gap-1.5 bg-gray-100 p-1 rounded-2xl">
           <button type="button" id="authTabLogin" onclick="switchAuthMode('login')" class="py-2 rounded-xl text-xs font-black bg-white text-[var(--mk-green-700)] shadow transition">Login</button>
           <button type="button" id="authTabSignup" onclick="switchAuthMode('signup')" class="py-2 rounded-xl text-xs font-black text-gray-500 transition">Create Account</button>
+        </div>
+
+        <!-- GOOGLE LOGIN -->
+        <button type="button" onclick="loginWithGoogle()" class="w-full bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-black py-3 px-3 rounded-xl shadow-sm text-xs transition flex items-center justify-center gap-2 active:scale-95">
+          <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.5-.3-2.2H12v4.3h6.5c-.1 1.1-.8 2.7-2.4 3.8l3.7 2.9c2.3-2.1 3.7-5.1 3.7-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.9l-3.7-2.9c-1 .7-2.4 1.2-4.2 1.2-3.2 0-5.9-2.1-6.8-5l-3.9 3C2.3 21.3 6.9 24 12 24z"/><path fill="#FBBC05" d="M5.2 14.4c-.2-.7-.4-1.5-.4-2.4s.1-1.7.4-2.4l-3.9-3C.5 8.2 0 10 0 12s.5 3.8 1.3 5.4l3.9-3z"/><path fill="#EA4335" d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.3-3.2C17.9 1.1 15.2 0 12 0 6.9 0 2.3 2.7 1.3 6.6l3.9 3c.9-2.8 3.6-4.9 6.8-4.9z"/></svg>
+          <span>Google se Login Karein</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <div class="flex-1 h-px bg-gray-200"></div>
+          <span class="text-[10px] text-gray-400 font-bold">YA EMAIL SE</span>
+          <div class="flex-1 h-px bg-gray-200"></div>
         </div>
 
         <!-- LOGIN PANE -->
@@ -1292,12 +1295,12 @@
   <!-- ==================== MODAL: WELCOME AFTER LOGIN ==================== -->
   <div id="welcomeModal" class="fixed inset-0 bg-black/80 z-[60] hidden flex items-center justify-center p-3">
     <div class="bg-white rounded-3xl max-w-sm w-full shadow-2xl border border-gray-100 max-h-[92vh] overflow-y-auto">
-      <div class="bg-gradient-to-br from-[#070A56] via-[#0B3B34] to-[#071F18] px-5 pt-5 pb-4 rounded-t-3xl text-white text-center relative">
+      <div class="bg-gradient-to-br from-[#0B1D3A] via-[#0B3B34] to-[#071F18] px-5 pt-5 pb-4 rounded-t-3xl text-white text-center relative">
         <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center text-white transition">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
         <div class="w-16 h-16 mx-auto rounded-2xl bg-white/95 border border-white/30 overflow-hidden flex items-center justify-center shadow-lg">
-          <img src="markaz_assets/tejarat_logo.png" alt="Tejarat" class="w-full h-full object-contain" />
+          <img src="markaz_assets/tejarat_logo_icon.png" alt="Tejarat" class="w-full h-full object-contain" />
         </div>
         <h3 class="mt-2.5 font-black text-base leading-tight">Khush Aamdeed, <span id="welcomeName">Reseller</span>! 🎉</h3>
         <p id="welcomeStore" class="text-[11px] text-amber-300 font-bold mt-0.5">Tejarat Store</p>
@@ -1373,11 +1376,7 @@
               <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wide">Wholesale Price</span>
               <span id="detWholesale" class="text-sm font-black text-emerald-700">Rs. 0</span>
             </div>
-            <div id="detCuts" class="flex items-center justify-end gap-1 flex-wrap"></div>
-            <div class="flex items-baseline justify-between gap-1">
-              <span class="text-[10px] font-bold text-gray-600 uppercase tracking-wide">Retail Price</span>
-              <span id="detRetail" class="text-sm font-black text-gray-900">Rs. 0</span>
-            </div>
+            <div id="detCuts" class="flex items-center gap-1.5 flex-wrap"></div>
           </div>
 
 
@@ -1428,7 +1427,7 @@
             <div class="mk-info-row bg-amber-50/60">
               <div class="txt">
                 <b class="!text-amber-900">⚡ Full Advance Payment Offer</b>
-                <span class="!text-amber-800">EasyPaisa / JazzCash / Meezan advance par Flat Rs. 100 Discount</span>
+                <span class="!text-amber-800">EasyPaisa / JazzCash advance par Flat Rs. 100 Discount</span>
               </div>
               <span class="tag bg-amber-400 text-gray-950">Rs. 100 OFF</span>
             </div>
@@ -1609,11 +1608,6 @@
                   <span id="ordCheckJazzCash" class="hidden absolute top-0.5 right-0.5 bg-red-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shadow">✓</span>
                 </button>
 
-                <button type="button" id="ordAdvMeezan" onclick="selectAdvanceChannel('meezan','order')" class="mk-choice !py-2 relative">
-                  <img src="markaz_assets/banks/meezan.svg" alt="Meezan Bank" class="h-9 w-16 object-contain" />
-                  <span class="mk-choice-title !text-[11px]">Meezan</span>
-                  <span id="ordCheckMeezan" class="hidden absolute top-0.5 right-0.5 bg-blue-700 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shadow">✓</span>
-                </button>
               </div>
 
               <div id="ordAdvDetailsCard" class="hidden bg-emerald-50/60 rounded-2xl p-3.5 border border-emerald-200 shadow-sm space-y-2.5"></div>
@@ -1718,11 +1712,6 @@
                 <span id="cartCheckJazzCash" class="hidden absolute top-0.5 right-0.5 bg-red-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shadow">✓</span>
               </button>
 
-              <button type="button" id="cartAdvMeezan" onclick="selectAdvanceChannel('meezan','cart')" class="mk-choice !py-2 relative">
-                <img src="markaz_assets/banks/meezan.svg" alt="Meezan Bank" class="h-9 w-16 object-contain" />
-                <span class="mk-choice-title !text-[11px]">Meezan</span>
-                <span id="cartCheckMeezan" class="hidden absolute top-0.5 right-0.5 bg-blue-700 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold shadow">✓</span>
-              </button>
             </div>
 
             <div id="cartAdvDetailsCard" class="hidden bg-emerald-50/60 rounded-2xl p-3.5 border border-emerald-200 shadow-sm space-y-2.5"></div>
@@ -1926,7 +1915,7 @@
     // Supabase Configuration
     const SUPABASE_URL = "https://xdsxmgzcfihkohsbzszq.supabase.co";
     const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhkc3htZ3pjZmloa29oc2J6c3pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3MDA2NzUsImV4cCI6MjEwOTI3NjY3NX0.kDUmA2E1BGl-oja9aosoBO4KQWCl7wxTRrOzxIiR-7g";
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
 
     // Constant Business Rules — defaults, overridden at runtime by app_settings
     const DEFAULT_ORDER_WHATSAPP_NUMBER = "923222089610";
@@ -2131,9 +2120,9 @@
 
           <h4>📋 Contact Information</h4>
           <ul>
-            <li>👤 Owner: <b>Hafiz Saad Al-Madani</b></li>
+            <li>👤 Owner: <b>Hafiz Saad Raza Attari Madani</b></li>
             <li>📱 Contact: <a href="https://wa.me/923133488621" target="_blank">+92 313 3488621</a></li>
-            <li>📱 Phone / WhatsApp: <a href="https://wa.me/${BRAND_WHATSAPP_NUMBER}" target="_blank">+92 319 0328256</a></li>
+            <li>🏷️ Brand: <b>Tejarat</b></li>
             ${SUPPORT_EMAIL ? '<li>📧 Email: <a href="mailto:' + SUPPORT_EMAIL + '">' + SUPPORT_EMAIL + '</a></li>' : ''}
           </ul>
 
@@ -2141,7 +2130,7 @@
           <p><b>24/7 Customer Support</b> — WhatsApp par raat ko bhi jawab mil jata hai.</p>
 
           <div class="pk-center" style="margin-top:22px;text-align:center;">
-            <img src="markaz_assets/tejarat_logo.png" alt="Tejarat App" style="width:86px;height:86px;object-fit:contain;margin:0 auto 6px;display:block;" />
+            <img src="markaz_assets/tejarat_logo_icon.png" alt="Tejarat App" style="width:86px;height:86px;object-fit:contain;margin:0 auto 6px;display:block;" />
             <b style="font-size:16px;letter-spacing:0.5px;">Tejarat App</b>
           </div>
         `,
@@ -2170,7 +2159,7 @@
     // in the app instantly.
     // ================================================================
     const BRAND_LOGOS = [
-      { key: 'tejarat_t', file: 'markaz_assets/tejarat_logo.png', label: 'Tejarat T', desc: 'Navy & Gold T' },
+      { key: 'tejarat_t', file: 'markaz_assets/tejarat_logo_icon.png', label: 'Tejarat T', desc: 'Navy & Gold T' },
     ];
 
     function currentBrandLogo() {
@@ -2186,7 +2175,6 @@
         img.src = logo.file;
         img.alt = 'Tejarat Logo';
       });
-      renderBrandKit();
       if (window.lucide) lucide.createIcons();
       showToast('✓ "' + logo.label + '" logo apply ho gaya!');
     }
@@ -2218,12 +2206,21 @@
     // app (buttons, badges, borders, header, sheets) re-colours instantly.
     // Palettes are derived from the Markaz brand system.
     const THEME_DEFINITIONS = {
+      tejarat: {
+        label: 'Tejarat Midnight Gold',
+        desc: 'Tejarat ki apni pehchan · Midnight Navy & Royal Gold',
+        brand: '#9C7A18', brandDeep: '#0B1D3A', brandSoft: '#FBF6E3',
+        from: '#060D1F', via: '#0B1D3A', to: '#1B3260',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
+        meta: '#0B1D3A',
+        swatch: 'linear-gradient(135deg,#060D1F,#0B1D3A,#C9A227)',
+      },
       markaz: {
         label: 'Markaz Green',
         desc: 'Original Markaz brand · Fresh & Organic',
         brand: '#02BC87', brandDeep: '#02704D', brandSoft: '#EAFBF4',
         from: '#02704D', via: '#00A473', to: '#02BC87',
-        ink: '#070A56', inkDeep: '#0E1036',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
         meta: '#02BC87',
         swatch: 'linear-gradient(135deg,#02704D,#00A473,#02BC87)',
       },
@@ -2232,7 +2229,7 @@
         desc: 'Organic · Pure Nature · Halal Wholesale',
         brand: '#00A473', brandDeep: '#04392B', brandSoft: '#EAFBF4',
         from: '#04392B', via: '#009578', to: '#00A473',
-        ink: '#070A56', inkDeep: '#0E1036',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
         meta: '#00A473',
         swatch: 'linear-gradient(135deg,#04392B,#009578,#00A473)',
       },
@@ -2241,7 +2238,7 @@
         desc: 'Trust · Corporate · Professional',
         brand: '#009DCD', brandDeep: '#004755', brandSoft: '#E9F8FD',
         from: '#004755', via: '#0083AB', to: '#009DCD',
-        ink: '#070A56', inkDeep: '#0E1036',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
         meta: '#009DCD',
         swatch: 'linear-gradient(135deg,#004755,#0083AB,#009DCD)',
       },
@@ -2250,7 +2247,7 @@
         desc: 'Trendy · High Conversion · Reseller Signature',
         brand: '#7C3AED', brandDeep: '#4C1D95', brandSoft: '#F5F3FF',
         from: '#4C1D95', via: '#6D28D9', to: '#7C3AED',
-        ink: '#070A56', inkDeep: '#0E1036',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
         meta: '#7C3AED',
         swatch: 'linear-gradient(135deg,#4C1D95,#6D28D9,#7C3AED)',
       },
@@ -2259,18 +2256,108 @@
         desc: 'Warm · Royal Pakistani Cultural Aesthetic',
         brand: '#BE123C', brandDeep: '#4C0519', brandSoft: '#FFF1F2',
         from: '#4C0519', via: '#881337', to: '#BE123C',
-        ink: '#070A56', inkDeep: '#0E1036',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
         meta: '#BE123C',
         swatch: 'linear-gradient(135deg,#4C0519,#881337,#BE123C)',
       },
       midnight: {
         label: 'Midnight Navy & Gold',
         desc: 'Luxury Premium · High-End Organic Store',
-        brand: '#FFBE21', brandDeep: '#070A56', brandSoft: '#FFF9EC',
-        from: '#030712', via: '#0E1036', to: '#1A1F72',
-        ink: '#070A56', inkDeep: '#0E1036',
+        brand: '#FFBE21', brandDeep: '#0B1D3A', brandSoft: '#FFF9EC',
+        from: '#030712', via: '#060D1F', to: '#1B3260',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
         meta: '#030712',
-        swatch: 'linear-gradient(135deg,#030712,#0E1036,#1A1F72)',
+        swatch: 'linear-gradient(135deg,#030712,#060D1F,#1B3260)',
+      },
+      sunset: {
+        label: 'Sunset Amber',
+        desc: 'Garam Naranji · Khano ke liye bhook jagane wala look',
+        brand: '#EA580C', brandDeep: '#7C2D12', brandSoft: '#FFF7ED',
+        from: '#7C2D12', via: '#C2410C', to: '#EA580C',
+        ink: '#431407', inkDeep: '#2A0E04',
+        meta: '#7C2D12',
+        swatch: 'linear-gradient(135deg,#7C2D12,#EA580C,#FDBA74)',
+      },
+      lime: {
+        label: 'Charcoal Lime',
+        desc: 'Modern Tech Look · Sab se alag aur fresh',
+        brand: '#65A30D', brandDeep: '#111827', brandSoft: '#F7FEE7',
+        from: '#030712', via: '#111827', to: '#374151',
+        ink: '#111827', inkDeep: '#030712',
+        meta: '#111827',
+        swatch: 'linear-gradient(135deg,#111827,#374151,#84CC16)',
+      },
+      mixgold: {
+        label: 'Mix: Navy Gold + Green',
+        desc: 'Midnight header · Markaz green buttons · dono ka best mix',
+        brand: '#02BC87', brandDeep: '#0B1D3A', brandSoft: '#EAFBF4',
+        from: '#060D1F', via: '#0B1D3A', to: '#1B3260',
+        ink: '#0B1D3A', inkDeep: '#060D1F',
+        meta: '#0B1D3A',
+        swatch: 'linear-gradient(135deg,#060D1F,#02BC87,#C9A227)',
+      },
+      mixocean: {
+        label: 'Mix: Ocean + Sunset',
+        desc: 'Ocean blue header · Sunset naranji buttons',
+        brand: '#EA580C', brandDeep: '#004755', brandSoft: '#FFF7ED',
+        from: '#004755', via: '#00758F', to: '#009DCD',
+        ink: '#0B2530', inkDeep: '#06222B',
+        meta: '#004755',
+        swatch: 'linear-gradient(135deg,#009DCD,#EA580C,#FDBA74)',
+      },
+      mixroyal: {
+        label: 'Mix: Royal + Gold',
+        desc: 'Royal purple header · Gold buttons · shahi look',
+        brand: '#9C7A18', brandDeep: '#4C1D95', brandSoft: '#FBF6E3',
+        from: '#4C1D95', via: '#5B21B6', to: '#7C3AED',
+        ink: '#2E1065', inkDeep: '#1E0A45',
+        meta: '#4C1D95',
+        swatch: 'linear-gradient(135deg,#7C3AED,#4C1D95,#C9A227)',
+      },
+      cocoa: {
+        label: 'Cocoa Cream',
+        desc: 'Chocolate brown + cream · desi organic feel',
+        brand: '#8D6E63', brandDeep: '#3E2723', brandSoft: '#EFEBE9',
+        from: '#3E2723', via: '#4E342E', to: '#6D4C41',
+        ink: '#3E2723', inkDeep: '#241512',
+        meta: '#3E2723',
+        swatch: 'linear-gradient(135deg,#3E2723,#6D4C41,#BCAAA4)',
+      },
+      rose: {
+        label: 'Rose Blush',
+        desc: 'Gulabi rose · Ittar aur beauty ke liye khaas',
+        brand: '#E11D48', brandDeep: '#881337', brandSoft: '#FFF1F2',
+        from: '#881337', via: '#BE123C', to: '#E11D48',
+        ink: '#4C0519', inkDeep: '#2A030D',
+        meta: '#881337',
+        swatch: 'linear-gradient(135deg,#881337,#E11D48,#FB7185)',
+      },
+      teal: {
+        label: 'Teal Turquoise',
+        desc: 'Firozi teal · Saaf, thanda aur fresh',
+        brand: '#0D9488', brandDeep: '#134E4A', brandSoft: '#F0FDF9',
+        from: '#134E4A', via: '#0F766E', to: '#14B8A6',
+        ink: '#04211D', inkDeep: '#02120F',
+        meta: '#134E4A',
+        swatch: 'linear-gradient(135deg,#134E4A,#14B8A6,#5EEAD4)',
+      },
+      indigo: {
+        label: 'Indigo Night',
+        desc: 'Gehra indigo · Premium aur mazboot',
+        brand: '#4F46E5', brandDeep: '#1E1B4B', brandSoft: '#EEF2FF',
+        from: '#1E1B4B', via: '#3730A3', to: '#4F46E5',
+        ink: '#1E1B4B', inkDeep: '#100E2E',
+        meta: '#1E1B4B',
+        swatch: 'linear-gradient(135deg,#1E1B4B,#4F46E5,#A5B4FC)',
+      },
+      olive: {
+        label: 'Olive Forest',
+        desc: 'Zaitooni sabz · Qudrati, mitti se juda look',
+        brand: '#65A30D', brandDeep: '#1A2E05', brandSoft: '#F7FEE7',
+        from: '#1A2E05', via: '#3F6212', to: '#4D7C0F',
+        ink: '#1A2E05', inkDeep: '#0E1A02',
+        meta: '#1A2E05',
+        swatch: 'linear-gradient(135deg,#1A2E05,#4D7C0F,#BEF264)',
       },
     };
 
@@ -2316,7 +2403,13 @@
     }
 
     function initTheme() {
-      const saved = localStorage.getItem('tejarat_theme') || 'markaz';
+      if (!localStorage.getItem('tejarat_design_v5')) {
+        localStorage.setItem('tejarat_design_v5', '1');
+        localStorage.setItem('tejarat_design_v4', '1');
+        applyAppTheme('teal', true);
+        return;
+      }
+      const saved = localStorage.getItem('tejarat_theme') || 'teal';
       applyAppTheme(saved, true);
     }
 
@@ -2356,11 +2449,11 @@
       const scored = products.filter(p => p && p.image_url);
       const picks = (scored.filter(p => /ghee|dry|honey|mix/i.test((p.title || '') + ' ' + (p.category || ''))))
         .concat(scored.filter(p => !/ghee|dry|honey|mix/i.test((p.title || '') + ' ' + (p.category || ''))))
-        .slice(0, 3);
+        .slice(0, 2);
 
       const slides = [];
       slides.push(heroOfferSlide(
-        'markaz_assets/banner_resell.png',
+        'markaz_assets/banner_v4.jpg',
         '🎁 Reseller Offer',
         'Buy for Yourself · Resell & Earn Money',
         `Har order par Rs. ${FIRST_ORDER_BONUS} extra munafa · 10 orders par Rs. ${TEN_ORDER_BONUS} bonus`,
@@ -2380,6 +2473,33 @@
             </div>
           </div>`);
       });
+
+      slides.push(heroOfferSlide(
+        'markaz_assets/banner_v5.jpg',
+        '💰 Reseller Earning',
+        'Ghar Baithe Resell Karke Kamayein',
+        'Bina investment — har product par apna munafa khud set karein',
+        'Shuru Karein →',
+        "switchTab('categories')"
+      ));
+
+      slides.push(heroOfferSlide(
+        'markaz_assets/banner_v6.jpg',
+        '🌿 Khalis Products',
+        '100% Khalis aur Natural',
+        'Desi Ghee · Shahad · Zaitoon ka Tel · Shilajit · Ittar',
+        'Products Dekhein →',
+        "switchTab('categories')"
+      ));
+
+      slides.push(heroOfferSlide(
+        'markaz_assets/banner_v7.jpg',
+        '🎉 Naya Collection',
+        'Premium Dry Fruits Aa Gaye',
+        'Badam · Kaju · Pista · Kishmish · Akhrot · Anjeer',
+        'Abhi Dekhein →',
+        "switchTab('categories')"
+      ));
 
       slides.push(heroOfferSlide(
         'markaz_assets/banner_coming.png',
@@ -2468,9 +2588,10 @@
         });
       }
 
-      const sales = scoped.reduce((s, o) => s + Number(o.total_cod_amount || 0), 0);
-      const profit = scoped.reduce((s, o) => s + Number(o.total_profit || 0), 0);
-      const delivered = scoped.filter(o => o.status === 'Delivered').length;
+      const deliveredScoped = scoped.filter(o => o.status === 'Delivered');
+      const sales = deliveredScoped.reduce((s, o) => s + Number(o.total_cod_amount || 0), 0);
+      const profit = deliveredScoped.reduce((s, o) => s + Number(o.total_profit || 0), 0);
+      const delivered = deliveredScoped.length;
 
       const set = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
       set('bizMetricSales', `Rs. ${sales.toLocaleString()}`);
@@ -2510,52 +2631,91 @@
       }
     }
 
+    // ==================== FAST LOAD HELPERS ====================
+    // Har cloud call ki hard time-limit: ek slow/hung request poori app ko
+    // "Loading..." par nahi rok sakti.
+    const SB_TIMEOUT_MS = 10000;
+    function withTimeout(promise, label) {
+      return Promise.race([
+        promise,
+        new Promise(resolve => setTimeout(() => { console.warn((label || 'request') + ' timeout — cache/fallback use hoga'); resolve(null); }, SB_TIMEOUT_MS))
+      ]);
+    }
+
+    // Catalog cache: pichli kamyab fetch ka data phone mein mehfooz rakho taake
+    // dobara khulne par products FORAN nazar aayein, network ka intezaar na ho.
+    function cacheCatalog() {
+      try {
+        if (products && products.length) localStorage.setItem('tejarat_cache_products', JSON.stringify(products));
+        if (categories && categories.length) localStorage.setItem('tejarat_cache_categories', JSON.stringify(categories));
+      } catch (e) {}
+    }
+    function loadCachedCatalog() {
+      try {
+        const p = JSON.parse(localStorage.getItem('tejarat_cache_products') || 'null');
+        const c = JSON.parse(localStorage.getItem('tejarat_cache_categories') || 'null');
+        if (Array.isArray(p) && p.length) products = p;
+        if (Array.isArray(c) && c.length) categories = c;
+      } catch (e) {}
+      return products.length > 0;
+    }
+
     async function fetchAllCloudData(showFeedback = false) {
       // Local state first so the UI is never empty while the network loads
       if (!localStateLoaded) loadLocalState();
 
-      try {
-        await fetchAppSettings();
-
-        // Fetch real products from Supabase products table
-        const { data: prodData } = await supabaseClient.from('products').select('*').order('created_at', { ascending: false });
-        products = prodData || [];
-
-        // Categories — live table first, fall back to the built-in list
-        try {
-          const { data: catData } = await supabaseClient.from('categories').select('*').order('sort_order', { ascending: true });
-          if (catData && catData.length) {
-            categories = catData.map(c => ({
-              id: c.id,
-              name: c.name,
-              urduName: c.urdu_name || '',
-              roman: c.urdu_name ? `${c.name} (${c.urdu_name})` : c.name,
-              icon: c.icon || '📦',
-              comingSoon: !!c.is_coming_soon,
-              subCategories: Array.isArray(c.sub_categories) ? c.sub_categories : [],
-            }));
-          } else {
-            categories = DEFAULT_CATEGORIES;
-          }
-        } catch (catErr) {
-          console.warn('categories read:', catErr);
-          categories = DEFAULT_CATEGORIES;
-        }
-
-        // Auth first: orders are PRIVATE per reseller (never global)
-        await checkAuthSession();
-
-        // Live notifications (admin panel se bheji hui)
-        await loadAppNotifications();
-
-        initTheme();
-        renderAllViews();
-        if (showFeedback) showToast('Data kamyabi se refresh ho gaya hai!');
-      } catch (err) {
-        console.warn('Supabase fetch error:', err);
+      // STEP 1: Cache mein catalog hai to FORAN render kar do — pehle tamam
+      // network jawabon ka intezaar hota tha, is liye "Loading..." atka rehta tha.
+      const hadCache = loadCachedCatalog();
+      if (hadCache) {
         initTheme();
         renderAllViews();
       }
+
+      // STEP 2: Settings, products aur categories EK SAATH (parallel) lao —
+      // pehle ye ek ke baad ek aati theen, jis se total loading time 3 guna ho jata tha.
+      try {
+        const settingsP = fetchAppSettings().catch(() => {});
+        const productsP = withTimeout(
+          supabaseClient.from('products').select('*').order('created_at', { ascending: false }).then(r => r.data),
+          'products'
+        );
+        const catsP = withTimeout(
+          supabaseClient.from('categories').select('*').order('sort_order', { ascending: true }).then(r => r.data),
+          'categories'
+        );
+        const [prodData, catData] = await Promise.all([productsP, catsP]);
+        await settingsP;
+
+        if (prodData && prodData.length) products = prodData;
+        if (catData && catData.length) {
+          categories = catData.map(c => ({
+            id: c.id,
+            name: c.name,
+            urduName: c.urdu_name || '',
+            roman: c.urdu_name ? `${c.name} (${c.urdu_name})` : c.name,
+            icon: c.icon || '📦',
+            comingSoon: !!c.is_coming_soon,
+            subCategories: Array.isArray(c.sub_categories) ? c.sub_categories : [],
+          }));
+        } else if (!categories.length) {
+          categories = DEFAULT_CATEGORIES;
+        }
+        cacheCatalog();
+      } catch (err) {
+        console.warn('Supabase fetch error:', err);
+        if (!categories.length) categories = DEFAULT_CATEGORIES;
+      }
+
+      initTheme();
+      renderAllViews();
+      if (showFeedback) showToast('Data kamyabi se refresh ho gaya hai!');
+
+      // STEP 3: Auth aur notifications background mein — catalog ko in ke
+      // intezaar mein kabhi na roko (orders private hain, wo wahin load honge).
+      try { await checkAuthSession(); } catch (e) { console.warn('auth check:', e); }
+      try { await loadAppNotifications(); } catch (e) { console.warn('notifications:', e); }
+      renderAllViews();
     }
 
     function renderAllViews() {
@@ -2570,7 +2730,6 @@
         renderWalletUI();
         updateBadges();
         renderThemeSwatches();
-        renderBrandKit();
         if (window.lucide) lucide.createIcons();
       } catch (err) {
         console.warn('renderAllViews error:', err);
@@ -2842,11 +3001,29 @@
     let authListenerBound = false;
 
     async function checkAuthSession() {
+      // 1) Saved local profile PEHLE restore karo — app kabhi "logged out" flash na kare,
+      //    aur jab tak user khud logout na kare, login barqarar rahe.
+      let savedUser = null;
+      try {
+        const raw = localStorage.getItem('tejarat_user');
+        if (raw) { const u = JSON.parse(raw); if (u && u.verified && u.email) savedUser = u; }
+      } catch (e) {}
+      if (savedUser) {
+        currentUser = savedUser;
+        applyLoggedInUserUI(savedUser);
+      }
+
       try {
         if (!authListenerBound) {
           authListenerBound = true;
           supabaseClient.auth.onAuthStateChange(async (event, session) => {
-            if (event === 'SIGNED_OUT') await resetGuestSession();
+            if (event === 'SIGNED_OUT') {
+              // Token refresh fail hone par bhi kabhi SIGNED_OUT aa jata hai —
+              // saved profile sirf tab saaf karo jab koi saved user hi na ho.
+              // Asli (user ke khud kiye hue) logout par logoutUser() khud
+              // resetGuestSession() call karta hai, wo hamesha kaam karega.
+              if (!localStorage.getItem('tejarat_user')) await resetGuestSession();
+            }
           });
         }
 
@@ -2855,28 +3032,21 @@
           await handleAuthSuccess(session.user, null, { silent: true });
           return;
         }
+        // Live session na mile lekin saved profile hai -> login barqarar rakho.
+        // Order ke liye dobara login NAHI manga jayega.
+        if (savedUser) {
+          await loadWalletForUser(savedUser);
+          await loadMyOrders();
+          startRealtimeSync();
+          return;
+        }
       } catch (err) {
         console.warn('Supabase getSession check:', err);
-      }
-
-      // Local backup (sirf UI restore — password verify Supabase hi karta hai)
-      const savedUser = localStorage.getItem('tejarat_user');
-      if (savedUser) {
-        try {
-          const u = JSON.parse(savedUser);
-          if (u && u.verified && u.email) {
-            currentUser = u;
-            applyLoggedInUserUI(u);
-            await loadWalletForUser(u);
-            await loadMyOrders();
-            return;
-          }
-        } catch (e) {}
+        if (savedUser) return; // network issue par bhi saved login mehfooz rahe
       }
 
       await resetGuestSession();
     }
-
     // Toggle password view (works for both login & signup fields)
     function togglePasswordVisibility(inputId, btn) {
       const inp = document.getElementById(inputId);
@@ -2909,6 +3079,18 @@
     }
 
     // 1. Login with Gmail/Email + Password (Supabase verified only)
+    async function loginWithGoogle() {
+      try {
+        const { error } = await supabaseClient.auth.signInWithOAuth({
+          provider: 'google',
+          options: { redirectTo: window.location.origin + window.location.pathname }
+        });
+        if (error) throw error;
+      } catch (e) {
+        showToast('Google login abhi available nahi hai — email se login karein', 'error');
+      }
+    }
+
     async function executeDirectLogin() {
       const email = (document.getElementById('inpLoginEmail')?.value || '').trim().toLowerCase();
       const password = document.getElementById('inpLoginPassword')?.value || '';
@@ -3068,6 +3250,7 @@
 
       await loadWalletForUser(userObj);
       await loadMyOrders();
+      startRealtimeSync();
       await loadAppNotifications();
 
       if (!opts.silent) {
@@ -3170,6 +3353,42 @@
       updateOrdersBadges();
     }
 
+    // ==================== REALTIME — Admin ke changes live app mein ====================
+    // Admin panel se order status ya wallet change ho to is reseller ki app
+    // mein baghair refresh kiye khud update ho jata hai (server-side data hi
+    // asal hai; app khud koi status change nahi kar sakti).
+    let realtimeChannel = null;
+    let realtimeRefreshTimer = null;
+    function scheduleRealtimeRefresh() {
+      if (realtimeRefreshTimer) return;
+      realtimeRefreshTimer = setTimeout(async () => {
+        realtimeRefreshTimer = null;
+        if (!currentUser) return;
+        try {
+          await loadMyOrders();
+          await loadWalletForUser(currentUser);
+          renderWalletUI();
+          updateBadges();
+        } catch (e) { console.warn('Realtime refresh:', e); }
+      }, 800);
+    }
+    function startRealtimeSync() {
+      if (realtimeChannel || !currentUser || !currentUser.id) return;
+      try {
+        realtimeChannel = supabaseClient
+          .channel('tejarat-live-' + currentUser.id)
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'orders' }, scheduleRealtimeRefresh)
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'reseller_wallets' }, scheduleRealtimeRefresh)
+          .subscribe();
+      } catch (e) { console.warn('Realtime:', e); }
+    }
+    function stopRealtimeSync() {
+      if (realtimeChannel) {
+        try { supabaseClient.removeChannel(realtimeChannel); } catch (e) {}
+        realtimeChannel = null;
+      }
+    }
+
     // 6. Apply Logged In UI
     function applyLoggedInUserUI(u) {
       // Profile Tab Card
@@ -3237,6 +3456,7 @@
 
     // 8. Logout — sab personal data clear
     async function logoutUser() {
+      stopRealtimeSync();
       try { await supabaseClient.auth.signOut(); } catch (e) {}
       await resetGuestSession();
       showToast('Account se logout ho gaye. Aap ka data mehfooz hai.');
@@ -3419,41 +3639,41 @@
       if (arr.length) arr = [Math.max(...arr)];
       return arr.slice(0, 1);
     }
+    function getDiscountInfo(p) {
+      const w = Number(p && p.wholesale_price) || 0;
+      if (!w) return null;
+      let pct = Number(p && p.specs && p.specs.discount_pct) || 0;
+      let cut = 0;
+      if (pct > 0) {
+        cut = Math.ceil((w / (1 - pct / 100)) / 10) * 10;
+      } else {
+        const r = getRetailPrice(p);
+        if (r > w) { cut = r; pct = Math.round((1 - w / r) * 100); }
+      }
+      if (!cut || cut <= w || pct <= 0) return null;
+      return { pct, cut };
+    }
     function priceBlockHtml(p) {
-      const r = getRetailPrice(p);
-      const cuts = getPriceCuts(p);
-      if (!r || !cuts.length) return '';
-      const max = Math.max(...cuts, r);
-      const off = Math.max(0, Math.round((1 - r / max) * 100));
-      return `
-        <div class="flex items-center justify-end gap-1 flex-wrap">
-          ${off > 0 ? `<span class="text-[9px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">${off}% OFF</span>` : ''}
-          ${cuts.map(c => `<span class="text-[10px] text-gray-400 font-bold line-through">Rs. ${Number(c).toLocaleString()}</span>`).join('')}
-        </div>
-        <div class="flex items-baseline justify-between gap-1">
-          <span class="text-[10px] text-gray-400 font-semibold">Retail Price</span>
-          <span class="text-[13px] font-black text-gray-900">Rs. ${Number(r).toLocaleString()}</span>
-        </div>`;
+      const d = getDiscountInfo(p);
+      if (!d) return '';
+      return `<div class="flex items-center justify-end gap-1.5 mt-0.5">
+        <span class="text-[9px] font-black text-white bg-rose-500 px-1.5 py-0.5 rounded-md">${d.pct}% OFF</span>
+        <span class="text-[10px] text-gray-400 font-bold line-through">Rs. ${d.cut.toLocaleString()}</span>
+      </div>`;
     }
     function updateRetailCuts(p) {
       const box = document.getElementById('detCuts');
-      const rtEl = document.getElementById('detRetail');
-      const r = getRetailPrice(p);
-      const cuts = getPriceCuts(p);
-      if (rtEl) rtEl.innerText = `Rs. ${Number(r).toLocaleString()}`;
-      if (box) {
-        if (!r || !cuts.length) { box.innerHTML = ''; return; }
-        const max = Math.max(...cuts, r);
-        const off = Math.max(0, Math.round((1 - r / max) * 100));
-        box.innerHTML = (off > 0 ? '<span class="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">' + off + '% OFF</span>' : '') +
-          cuts.map(c => '<span class="text-[10px] text-gray-400 font-bold line-through">Rs. ' + Number(c).toLocaleString() + '</span>').join('');
-      }
+      if (!box) return;
+      const d = getDiscountInfo(p);
+      if (!d) { box.innerHTML = ''; return; }
+      box.innerHTML = '<span class="text-[10px] font-black text-white bg-rose-500 px-1.5 py-0.5 rounded-md">' + d.pct + '% OFF</span>' +
+        '<span class="text-[11px] text-gray-400 font-bold line-through">Rs. ' + d.cut.toLocaleString() + '</span>';
     }
 
     // Desktop download button
     function downloadApkFromDesk() {
       const url = (typeof APP_SETTINGS_CACHE !== 'undefined' && APP_SETTINGS_CACHE && APP_SETTINGS_CACHE.apk_download_url)
-        ? APP_SETTINGS_CACHE.apk_download_url : 'Tejarat-App-v3.8-PRO.apk';
+        ? APP_SETTINGS_CACHE.apk_download_url : 'Tejarat-App-v3.9-PRO.apk';
       window.open(url, '_blank');
     }
 
@@ -3902,7 +4122,7 @@ ${p.urdu_title || ''}
       if (window.lucide) lucide.createIcons();
     }
 
-    // Select Advance Channel: EasyPaisa, JazzCash, Meezan Bank (scoped per sheet)
+    // Select Advance Channel: EasyPaisa, JazzCash (scoped per sheet)
     function selectAdvanceChannel(channel, scope) {
       scope = scope || 'order';
       selectedAdvanceChannel = channel;
@@ -3910,24 +4130,20 @@ ${p.urdu_title || ''}
       const isCart = scope === 'cart';
       const ids = isCart
         ? { card: 'cartAdvDetailsCard', ep: 'cartAdvEasyPaisa', jc: 'cartAdvJazzCash',
-            mz: 'cartAdvMeezan', chkEP: 'cartCheckEasyPaisa',
-            chkJC: 'cartCheckJazzCash', chkMZ: 'cartCheckMeezan' }
+            chkEP: 'cartCheckEasyPaisa', chkJC: 'cartCheckJazzCash' }
         : { card: 'ordAdvDetailsCard', ep: 'ordAdvEasyPaisa', jc: 'ordAdvJazzCash',
-            mz: 'ordAdvMeezan', chkEP: 'ordCheckEasyPaisa',
-            chkJC: 'ordCheckJazzCash', chkMZ: 'ordCheckMeezan' };
+            chkEP: 'ordCheckEasyPaisa', chkJC: 'ordCheckJazzCash' };
 
       const card = document.getElementById(ids.card);
       const btnEP = document.getElementById(ids.ep);
       const btnJC = document.getElementById(ids.jc);
-      const btnMZ = document.getElementById(ids.mz);
       const chkEP = document.getElementById(ids.chkEP);
       const chkJC = document.getElementById(ids.chkJC);
-      const chkMZ = document.getElementById(ids.chkMZ);
       if (!card) return;
 
       // Reset all channel buttons
-      [btnEP, btnJC, btnMZ].forEach(b => b && b.classList.remove('is-active'));
-      [chkEP, chkJC, chkMZ].forEach(c => c && c.classList.add('hidden'));
+      [btnEP, btnJC].forEach(b => b && b.classList.remove('is-active'));
+      [chkEP, chkJC].forEach(c => c && c.classList.add('hidden'));
 
       const holderName = 'MUHAMMAD YAQOOB';
       let acctNumber = '';
@@ -3947,11 +4163,12 @@ ${p.urdu_title || ''}
         if (btnJC) btnJC.classList.add('is-active');
         if (chkJC) chkJC.classList.remove('hidden');
       } else {
+        // Default: EasyPaisa
         acctNumber = '03190328256';
-        brandTitle = 'Meezan Bank';
-        themeColorClass = 'text-[#002D62]';
-        if (btnMZ) btnMZ.classList.add('is-active');
-        if (chkMZ) chkMZ.classList.remove('hidden');
+        brandTitle = 'EasyPaisa';
+        themeColorClass = 'text-[#00A859]';
+        if (btnEP) btnEP.classList.add('is-active');
+        if (chkEP) chkEP.classList.remove('hidden');
       }
 
       card.classList.remove('hidden');
@@ -3968,7 +4185,7 @@ ${p.urdu_title || ''}
           </div>
 
           <div class="flex justify-between items-center gap-2 text-xs pt-1 border-t border-gray-100">
-            <span class="text-gray-500 font-bold min-w-0 truncate">${brandTitle === 'Meezan Bank' ? 'Raast ID / Account No.' : brandTitle + ' Number'}:</span>
+            <span class="text-gray-500 font-bold min-w-0 truncate">${brandTitle + ' Number'}:</span>
             <div class="flex items-center gap-1.5 flex-shrink-0">
               <span class="font-black ${themeColorClass} font-mono text-sm tracking-wider">${acctNumber}</span>
               <button type="button" onclick="copyToClipboard('${acctNumber}', '✅ ${brandTitle} number copy ho gaya!')" class="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-2 py-1 rounded-lg text-[10px] font-black transition shadow-sm active:scale-95 flex items-center gap-1">
@@ -3978,15 +4195,6 @@ ${p.urdu_title || ''}
             </div>
           </div>
 
-          ${brandTitle === 'Meezan Bank' ? `
-          <div class="flex justify-between items-center gap-2 text-[11px] pt-1 border-t border-gray-100">
-            <span class="text-gray-500 font-bold">Bank Name:</span>
-            <span class="font-extrabold text-[#002D62] text-right">Meezan Bank Ltd. (Islamic Banking)</span>
-          </div>
-          <div class="flex justify-between items-center gap-2 text-[11px] pt-0.5">
-            <span class="text-gray-500 font-bold">Alternative Number:</span>
-            <span class="font-mono font-bold text-gray-700">03222089610</span>
-          </div>` : ''}
         </div>
 
         <p class="text-[10px] text-gray-600 font-semibold leading-relaxed">
@@ -4182,9 +4390,7 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
 
       // Update local wallet & orders list
       orders.unshift(orderRow);
-      wallet.pending_profit = (wallet.pending_profit || 0) + profit;
-      wallet.completed_orders = (wallet.completed_orders || 0) + 1;
-      wallet.total_sales = (wallet.total_sales || 0) + totalAmount;
+      // Profit/sales counters are NOT increased locally: they update only when Admin marks the order Delivered (server wallet + Delivered orders).
       saveLocalState();
       updateBadges();
       renderOrdersList();
@@ -4333,8 +4539,9 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
       set('homePendingProfit', `Rs. ${Number(wallet.pending_profit || 0).toLocaleString()}`);
       set('bizStoreName', wallet.store_name || 'Mera Online Store');
 
-      set('bizMetricSales', `Rs. ${Number(wallet.total_sales || 0).toLocaleString()}`);
-      set('bizMetricOrders', `${Number(wallet.completed_orders || 0)} Orders`);
+      const deliveredOrders = orders.filter(o => o.status === 'Delivered');
+      set('bizMetricSales', `Rs. ${deliveredOrders.reduce((s, o) => s + Number(o.total_cod_amount || 0), 0).toLocaleString()}`);
+      set('bizMetricOrders', `${deliveredOrders.length} Orders`);
       set('bizMetricProfit', `Rs. ${Number(wallet.available_balance || 0).toLocaleString()}`);
       set('bizMetricBonus', `Rs. ${Number(wallet.bonus_earned || 0).toLocaleString()}`);
 
@@ -4571,9 +4778,7 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
       try { saved = await syncOrderToSupabase(orderRow); } catch (err) { console.warn(err); }
 
       orders.unshift(orderRow);
-      wallet.pending_profit = (wallet.pending_profit || 0) + profit;
-      wallet.completed_orders = (wallet.completed_orders || 0) + 1;
-      wallet.total_sales = (wallet.total_sales || 0) + totalAmount;
+      // Profit/sales counters are NOT increased locally: they update only when Admin marks the order Delivered (server wallet + Delivered orders).
       cart = [];
       saveLocalState();
       updateBadges();
@@ -5053,7 +5258,6 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
     window.addEventListener('DOMContentLoaded', () => {
       initCarousel();
       initBrandLogo();
-      renderBrandKit();
       fetchAllCloudData();
     });
   </script>
@@ -5073,30 +5277,6 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
           Band Karein
         </button>
       </div>
-    </div>
-  </div>
-
-  <!-- ==================== MODAL: LIVE COLOR THEME PICKER ==================== -->
-  <div id="themePickerModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-sm w-full p-5 space-y-4 shadow-2xl border border-gray-100" style="max-height:92vh; overflow-y:auto">
-      <div class="flex items-center justify-between border-b pb-3">
-        <div class="flex items-center gap-2">
-          <span class="text-xl">🎨</span>
-          <div>
-            <h3 class="font-black text-sm text-gray-900">App Color Theme</h3>
-            <p class="text-[10px] text-gray-500">Poora app turant re-colour ho jata hai</p>
-          </div>
-        </div>
-        <button onclick="closeThemePickerModal()" class="w-7 h-7 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 flex-shrink-0">
-          <i data-lucide="x" class="w-4 h-4"></i>
-        </button>
-      </div>
-
-      <div class="space-y-2.5" id="themeSwatchList"></div>
-
-      <button onclick="closeThemePickerModal()" class="w-full bg-gray-900 text-white font-black py-2.5 rounded-xl text-xs shadow transition">
-        Band Karein
-      </button>
     </div>
   </div>
 
@@ -5168,6 +5348,96 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
             <img src="markaz_assets/banks/alfalah.svg" alt="Bank Alfalah" class="h-8 w-full object-contain" loading="lazy" />
             <span class="text-[9px] font-bold text-gray-600 leading-none">Bank Alfalah</span>
           </button>
+          <button type="button" onclick="selectPayoutBank('MCB Bank', '🔴 MCB Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="MCB Bank">
+            <img src="markaz_assets/banks/mcb.svg" alt="MCB Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">MCB Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('National Bank', '🟢 National Bank of Pakistan (NBP)')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="National Bank">
+            <img src="markaz_assets/banks/nbp.svg" alt="National Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">National Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Allied Bank', '🔵 Allied Bank (ABL)')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Allied Bank">
+            <img src="markaz_assets/banks/abl.svg" alt="Allied Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Allied Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Askari Bank', '🟩 Askari Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Askari Bank">
+            <img src="markaz_assets/banks/askari.svg" alt="Askari Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Askari Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Bank AL Habib', '🟦 Bank AL Habib')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Bank AL Habib">
+            <img src="markaz_assets/banks/alhabib.svg" alt="Bank AL Habib" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Bank AL Habib</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Faysal Bank', '🔵 Faysal Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Faysal Bank">
+            <img src="markaz_assets/banks/faysal.svg" alt="Faysal Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Faysal Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Bank of Punjab', '🟠 Bank of Punjab (BOP)')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Bank of Punjab">
+            <img src="markaz_assets/banks/bop.svg" alt="Bank of Punjab" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Bank of Punjab</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Habib Metro', '🟦 Habib Metro Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Habib Metro">
+            <img src="markaz_assets/banks/habibmetro.svg" alt="Habib Metro" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Habib Metro</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Soneri Bank', '🟣 Soneri Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Soneri Bank">
+            <img src="markaz_assets/banks/soneri.svg" alt="Soneri Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Soneri Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('JS Bank', '🟠 JS Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="JS Bank">
+            <img src="markaz_assets/banks/jsbank.svg" alt="JS Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">JS Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Bank of Khyber', '🟢 Bank of Khyber (BOK)')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Bank of Khyber">
+            <img src="markaz_assets/banks/bok.svg" alt="Bank of Khyber" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Bank of Khyber</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Dubai Islamic', '🟩 Dubai Islamic Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Dubai Islamic">
+            <img src="markaz_assets/banks/dib.svg" alt="Dubai Islamic" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Dubai Islamic</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('BankIslami', '🟩 BankIslami Pakistan')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="BankIslami">
+            <img src="markaz_assets/banks/bankislami.svg" alt="BankIslami" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">BankIslami</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Al Baraka', '🟦 Al Baraka Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Al Baraka">
+            <img src="markaz_assets/banks/albaraka.svg" alt="Al Baraka" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Al Baraka</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Samba Bank', '🔴 Samba Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Samba Bank">
+            <img src="markaz_assets/banks/samba.svg" alt="Samba Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Samba Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Standard Chartered', '🔵 Standard Chartered')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Standard Chartered">
+            <img src="markaz_assets/banks/scb.svg" alt="Standard Chartered" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Standard Chartered</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Sindh Bank', '🔴 Sindh Bank')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Sindh Bank">
+            <img src="markaz_assets/banks/sindhbank.svg" alt="Sindh Bank" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Sindh Bank</span>
+          </button>
+
+          <button type="button" onclick="selectPayoutBank('Raast', '🟢 Raast (SBP)')" class="payout-bank-btn p-2 rounded-xl border flex flex-col items-center justify-center gap-1 hover:bg-amber-50 transition border-gray-200" data-bank="Raast">
+            <img src="markaz_assets/banks/raast.svg" alt="Raast" class="h-8 w-full object-contain" loading="lazy" />
+            <span class="text-[9px] font-bold text-gray-600 leading-none">Raast</span>
+          </button>
+
 
 
         </div>
@@ -5344,14 +5614,14 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
     function getApkDownloadUrl() {
       return (typeof APP_SETTINGS_CACHE !== 'undefined' && APP_SETTINGS_CACHE && APP_SETTINGS_CACHE.apk_download_url)
         ? APP_SETTINGS_CACHE.apk_download_url
-        : 'https://tejarat-app.vercel.app/Tejarat-App-v3.8-PRO.apk';
+        : 'https://tejarat-app.vercel.app/Tejarat-App-v3.9-PRO.apk';
     }
     function downloadTejaratApk() {
       const url = getApkDownloadUrl();
       try {
         const a = document.createElement('a');
         a.href = url;
-        a.setAttribute('download', 'Tejarat-App-v3.8-PRO.apk');
+        a.setAttribute('download', 'Tejarat-App-v3.9-PRO.apk');
         a.rel = 'noopener';
         document.body.appendChild(a);
         a.click();
