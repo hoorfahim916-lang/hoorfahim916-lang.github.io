@@ -2853,6 +2853,7 @@
             email: currentUser.email,
             phone: currentUser.email,
             store_name: currentUser.store_name || (currentUser.full_name + ' Store'),
+            full_name: currentUser.full_name || null,
             payment_method: selectedPayoutMethod,
             account_number: number,
             account_title: title
@@ -3290,6 +3291,10 @@
           row = byEmail.data;
         }
 
+        if (row && !row.full_name && u.full_name) {
+          try { await supabaseClient.from('reseller_wallets').update({ full_name: u.full_name }).eq('user_id', u.id); } catch (e) {}
+        }
+
         if (row) {
           wallet.available_balance = Number(row.available_balance) || 0;
           wallet.pending_profit = Number(row.pending_profit) || 0;
@@ -3305,6 +3310,8 @@
             email: u.email,
             phone: u.email,
             store_name: u.store_name,
+            full_name: u.full_name || null,
+            auth_provider: u.provider || 'email',
             available_balance: 0,
             pending_profit: 0,
             total_withdrawn: 0,
@@ -4937,6 +4944,7 @@ _Tejarat App - Pakistan's #1 Reselling Network_`;
             email: currentUser.email,
             phone: currentUser.email,
             store_name: storeName,
+            full_name: currentUser.full_name || null,
             payment_method: method,
             account_number: number,
             account_title: title,
